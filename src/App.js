@@ -1,23 +1,10 @@
-import logo from './logo.svg';
 import './App.css';
+import LoadoutGrid from './components/LoadoutGrid/LoadoutGrid';
 
 function App() {
   return (
     <div className='App'>
-      <header className='App-header'>
-        <img src={logo} className='App-logo' alt='logo' />
-        <p>
-          Edit the <code>src/App.js</code> file and save to reload.
-        </p>
-        <a
-          className='App-link'
-          href='https://reactjs.org'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          Learn React
-        </a>
-      </header>
+      <LoadoutGrid />
     </div>
   );
 }
