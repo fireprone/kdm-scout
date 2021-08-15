@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/kdm-scout/static/css/main.8c8b27cf.chunk.css",
+    "main.js": "/kdm-scout/static/js/main.3e33dcaf.chunk.js",
+    "main.js.map": "/kdm-scout/static/js/main.3e33dcaf.chunk.js.map",
+    "runtime-main.js": "/kdm-scout/static/js/runtime-main.1439f630.js",
+    "runtime-main.js.map": "/kdm-scout/static/js/runtime-main.1439f630.js.map",
+    "static/js/2.641a6425.chunk.js": "/kdm-scout/static/js/2.641a6425.chunk.js",
+    "static/js/2.641a6425.chunk.js.map": "/kdm-scout/static/js/2.641a6425.chunk.js.map",
+    "static/js/3.0ba683b6.chunk.js": "/kdm-scout/static/js/3.0ba683b6.chunk.js",
+    "static/js/3.0ba683b6.chunk.js.map": "/kdm-scout/static/js/3.0ba683b6.chunk.js.map",
+    "index.html": "/kdm-scout/index.html",
+    "static/css/main.8c8b27cf.chunk.css.map": "/kdm-scout/static/css/main.8c8b27cf.chunk.css.map",
+    "static/js/2.641a6425.chunk.js.LICENSE.txt": "/kdm-scout/static/js/2.641a6425.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/kdm-scout/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1439f630.js",
+    "static/js/2.641a6425.chunk.js",
+    "static/css/main.8c8b27cf.chunk.css",
+    "static/js/main.3e33dcaf.chunk.js"
+  ]
+}
