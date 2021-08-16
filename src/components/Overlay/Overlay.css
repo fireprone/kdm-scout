@@ -10,7 +10,7 @@
 #overlay,
 #overlayBg {
   z-index: 2;
-  transition: opacity 0.3s;
+  transition: opacity 0.4s;
   position: fixed;
   height: 100%;
   width: 100%;
@@ -22,16 +22,37 @@
   opacity: 0%;
 }
 
-#overlay img {
-  position: fixed;
-  pointer-events: none;
-  z-index: 100;
+#overlay .card {
   top: 10%;
+}
+
+#overlay.hidden .card {
+  top: 0%;
+}
+
+#overlay h1 {
+  text-align: center;
+  color: #fff;
+  top: 2%;
+}
+
+#overlay hr {
+  width: 50%;
+  top: 7%;
+}
+
+#overlay.hidden hr {
+  width: 80%;
+}
+
+#overlay .card,
+#overlay h1,
+#overlay hr {
+  position: inherit;
+  pointer-events: none;
+  z-index: 3;
   left: 0;
   right: 0;
   margin: 0 auto;
-}
-
-#overlay.hidden img {
-  top: 0%;
+  transition: top 0.3s, width 0.5s;
 }

@@ -5,10 +5,6 @@
   z-index: 1;
 }
 
-.card {
-  transition: top 0.5s;
-}
-
 div.card {
   position: absolute;
   top: 0;

@@ -26,11 +26,15 @@ const Overlay = ({ focusedCard, clickListener }) => {
       onClick={clickListener}
     >
       {getFocusedPath() && (
-        <LoadoutCard
-          img={cardPath}
-          name={focusedCard}
-          clickListener={() => null}
-        />
+        <>
+          <h1>{focusedCard}</h1>
+          <hr></hr>
+          <LoadoutCard
+            img={cardPath}
+            name={focusedCard}
+            clickListener={() => null}
+          />
+        </>
       )}
       <div id='overlayBg'></div>
     </div>
