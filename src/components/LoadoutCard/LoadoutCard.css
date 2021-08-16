@@ -1,28 +1,12 @@
-.draggable-source--is-dragging {
-  opacity: 20%;
-}
-
-.draggable-mirror {
-  height: auto;
-  width: 30%;
-  z-index: 99;
-}
-
-.loadout-space {
-  position: relative;
-  display: inline-block;
-  background-color: #333;
-  height: auto;
-  margin: 0.25rem;
-  border-radius: 10%;
-  width: 30%;
-  padding-top: 30%;
-}
-
 .loadout-space img {
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 1;
+}
+
+.card {
+  transition: top 0.5s;
 }
 
 div.card {
@@ -31,4 +15,14 @@ div.card {
   left: 0;
   width: 100%;
   padding-top: 100%;
+}
+
+.draggable-source--is-dragging {
+  opacity: 20%;
+}
+
+img.draggable-mirror {
+  z-index: 99;
+  width: 30%;
+  transition: top 0.2s, width 0.2s, height 0.2s;
 }

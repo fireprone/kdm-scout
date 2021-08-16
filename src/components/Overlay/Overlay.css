@@ -1,0 +1,37 @@
+#overlay {
+  opacity: 100%;
+}
+
+#overlayBg {
+  opacity: 90%;
+  background-color: #222;
+}
+
+#overlay,
+#overlayBg {
+  z-index: 2;
+  transition: opacity 0.3s;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+}
+
+#overlay.hidden,
+#overlay.hidden #overlayBg {
+  pointer-events: none;
+  opacity: 0%;
+}
+
+#overlay img {
+  position: fixed;
+  pointer-events: none;
+  z-index: 100;
+  top: 10%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+#overlay.hidden img {
+  top: 0%;
+}
