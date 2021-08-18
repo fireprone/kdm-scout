@@ -4,24 +4,12 @@ import LoadoutGrid from './components/LoadoutGrid/LoadoutGrid';
 import Overlay from './components/Overlay/Overlay';
 
 function App() {
-  const [state, setState] = useState({ focusedCard: '' });
-
-  const showOverlay = (cardName) => {
-    setState({
-      focusedCard: cardName,
-    });
-  };
-
-  const hideOverlay = () => {
-    setState({
-      focusedCard: '',
-    });
-  };
+  const [focusedCard, setFocusedCard] = useState({ name: '', img: '' });
 
   return (
     <div className='App'>
-      <Overlay focusedCard={state.focusedCard} clickListener={hideOverlay} />
-      <LoadoutGrid clickListener={showOverlay} />
+      <Overlay focusedCard={focusedCard} />
+      <LoadoutGrid clickListener={setFocusedCard} />
     </div>
   );
 }

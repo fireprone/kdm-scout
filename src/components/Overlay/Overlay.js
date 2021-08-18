@@ -1,41 +1,34 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Overlay.css';
-import CardProvider from '../../CardProvider.js';
 import LoadoutCard from '../LoadoutCard/LoadoutCard';
 
-const Overlay = ({ focusedCard, clickListener }) => {
-  const [cardPath, setCardPath] = useState('');
+const Overlay = ({ focusedCard }) => {
+  const [isHidden, setIsHidden] = useState(true);
 
-  const getFocusedPath = async () => {
-    if (focusedCard) {
-      await import(`../../img/${CardProvider.getImagePath(focusedCard)}`).then(
-        (response) => {
-          setCardPath(response.default);
-        }
-      );
-    } else {
-      return false;
+  useEffect(() => {
+    if (focusedCard.name) {
+      setIsHidden(false);
     }
+  }, [focusedCard]);
+
+  const hideOverlay = () => {
+    setIsHidden(true);
   };
 
   return (
     <div
       id='overlay'
-      className={focusedCard === '' ? 'hidden' : ''}
-      onClick={clickListener}
+      className={isHidden ? 'hidden' : ''}
+      onClick={hideOverlay}
     >
-      {getFocusedPath() && (
-        <>
-          <h1>{focusedCard}</h1>
-          <hr></hr>
-          <LoadoutCard
-            img={cardPath}
-            name={focusedCard}
-            clickListener={() => null}
-          />
-        </>
-      )}
+      <h1>{focusedCard.name}</h1>
+      <hr></hr>
+      <LoadoutCard
+        img={focusedCard.img}
+        name={focusedCard.name}
+        clickListener={() => true}
+      />
+      {/* <p>{CardProvider.getCard(focusedCard).Definitions[0]}</p> */}
       <div id='overlayBg'></div>
     </div>
   );

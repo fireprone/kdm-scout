@@ -6,6 +6,7 @@ const CardProvider = (() => {
       Accuracy: 7,
       Strength: 1,
       Origin: 'Starting Gear',
+      Definitions: ['Archive'],
     },
     Cloth: {
       Keywords: 'Armor',

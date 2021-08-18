@@ -5,7 +5,7 @@ const LoadoutCard = (props) => {
   return (
     <>
       <img
-        onClick={() => props.clickListener(props.name)}
+        onClick={() => props.clickListener(props)}
         src={props.img}
         className='card'
         alt={`${props.name} Card`}

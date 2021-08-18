@@ -23,7 +23,8 @@
 }
 
 #overlay .card {
-  top: 10%;
+  top: 12%;
+  width: 75%;
 }
 
 #overlay.hidden .card {
@@ -33,16 +34,24 @@
 #overlay h1 {
   text-align: center;
   color: #fff;
-  top: 2%;
+  top: 3%;
 }
 
 #overlay hr {
   width: 50%;
-  top: 7%;
+  top: 9%;
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.75),
+    rgba(255, 255, 255, 0)
+  );
 }
 
 #overlay.hidden hr {
-  width: 80%;
+  width: 1%;
 }
 
 #overlay .card,
@@ -54,5 +63,5 @@
   left: 0;
   right: 0;
   margin: 0 auto;
-  transition: top 0.3s, width 0.5s;
+  transition: top 0.3s, width 1s;
 }

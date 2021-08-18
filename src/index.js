@@ -14,9 +14,3 @@ ReactDOM.render(
 const draggable = new Swappable(document.getElementById('loadout-grid'), {
   draggable: '.card',
 });
-
-// draggable.on('mirror:attached', (e) => {
-//   setTimeout(() => {
-//     e.mirror.style.width = '35%';
-//   }, 10);
-// });
