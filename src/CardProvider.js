@@ -1,23 +1,24 @@
 const CardProvider = (() => {
   const cards = {
     'Founding Stone': {
-      Keywords: 'Weapon',
-      Speed: 2,
-      Accuracy: 7,
-      Strength: 1,
-      Origin: 'Starting Gear',
-      Definitions: ['Archive'],
+      keywords: 'Weapon',
+      speed: 2,
+      accuracy: 7,
+      strength: 1,
+      origin: 'Starting Gear',
+      terms: ['Archive'],
     },
     Cloth: {
-      Keywords: 'Armor',
-      Armor: 1,
-      Location: 'Waist',
-      Origin: 'Starting Gear',
+      keywords: 'Armor',
+      armor: 1,
+      location: 'Waist',
+      origin: 'Starting Gear',
+      terms: ['Savage', 'Fragile'],
     },
   };
 
   const getCard = (cardName) => {
-    return cards.hasOwnProperty(cardName) ? cards[cardName] : null;
+    return cards.hasOwnProperty(cardName) ? cards[cardName] : { terms: [] };
   };
 
   const getImagePath = (cardName) => {

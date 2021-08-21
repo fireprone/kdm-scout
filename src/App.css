@@ -4,3 +4,9 @@ button.a2hs {
   top: 1px;
   left: 1px;
 }
+
+#loadout-section {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 1rem;
+}

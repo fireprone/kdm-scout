@@ -1,4 +1,5 @@
-#overlay {
+#Overlay {
+  z-index: 2;
   opacity: 1;
 }
 
@@ -7,61 +8,51 @@
   background-color: #222;
 }
 
-#overlay,
+#Overlay,
 #overlayBg {
-  z-index: 2;
-  transition: opacity 0.4s;
   position: fixed;
+  top: 0;
+  left: 0;
   height: 100%;
   width: 100%;
+  transition: opacity 0.4s;
 }
 
-#overlay.hidden,
-#overlay.hidden #overlayBg {
+#Overlay.hidden,
+#Overlay.hidden #overlayBg {
   pointer-events: none;
   opacity: 0;
 }
 
-#overlay .card {
-  top: 12%;
-  width: 75%;
+#overlayContent {
+  max-width: 30rem;
+  margin: 0 auto;
 }
 
-#overlay.hidden .card {
-  top: 0%;
+#Overlay .card {
+  display: block;
+  padding-top: 15%;
+  width: 70%;
+  transition: padding-top 0.5s;
 }
 
-#overlay h1 {
-  text-align: center;
-  color: #fff;
-  top: 3%;
+#Overlay.hidden .card {
+  padding-top: 0%;
 }
 
-#overlay hr {
-  width: 50%;
-  top: 9%;
-  border: 0;
-  height: 1px;
-  background-image: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0),
-    rgba(255, 255, 255, 0.75),
-    rgba(255, 255, 255, 0)
-  );
-}
-
-#overlay.hidden hr {
-  width: 1%;
-}
-
-#overlay .card,
-#overlay h1,
-#overlay hr {
-  position: inherit;
-  pointer-events: none;
-  z-index: 3;
+#Overlay .card {
+  position: relative;
+  z-index: 4;
   left: 0;
   right: 0;
-  margin: 0 auto;
-  transition: top 0.3s, width 1s;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#Overlay.hidden .TermsList ul {
+  padding-top: 2%;
+}
+
+#Overlay .header {
+  font-weight: bold;
 }

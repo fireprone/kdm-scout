@@ -19,6 +19,6 @@ div.card {
 
 img.draggable-mirror {
   z-index: 99;
-  width: 30%;
+  width: 33%;
   transition: top 0.2s, width 0.2s, height 0.2s;
 }

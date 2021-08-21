@@ -1,0 +1,99 @@
+.TermsList {
+  position: relative;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.TermsList ul {
+  list-style-type: none;
+  background-color: #111;
+  z-index: 2;
+  padding-top: 3rem;
+  padding-bottom: 1.5rem;
+  transition: padding-top 1.5s;
+}
+
+.TermsList #termDefinition {
+  background-color: #444;
+  z-index: 3;
+  padding-top: 3rem;
+  transition: margin-top 0.75s ease-out;
+}
+
+.TermsList ul,
+.TermsList #termDefinition {
+  position: absolute;
+  left: 0;
+  right: 0;
+  border-radius: 0 0 30px 30px;
+  margin-top: -2rem;
+}
+
+.TermsList ul svg {
+  position: relative;
+  float: right;
+}
+
+.TermsList #termDefinition p {
+  overflow: auto;
+  max-height: 10rem;
+  padding: 1rem;
+}
+
+.TermsList #termDefinition svg {
+  position: relative;
+  left: 0;
+}
+
+.TermsList #termDefinition.hidden,
+.hidden .TermsList #termDefinition {
+  margin-top: -250px;
+}
+
+.TermsList h2 {
+  text-align: center;
+}
+
+.TermsList hr {
+  width: 100%;
+  border: 0;
+  height: 1px;
+  margin-top: 0.5rem;
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.75),
+    rgba(255, 255, 255, 0)
+  );
+}
+
+.TermsList li {
+  display: inline-block;
+  width: 100%;
+  transition: background-color 1s;
+}
+
+.TermsList li:hover,
+.TermsList li:active {
+  background-color: #333;
+}
+
+.TermsList .term {
+  padding: 0.5rem 1rem;
+}
+
+.TermsList #return {
+  text-align: center;
+  font-size: 2rem;
+  border-radius: 0 0 30px 30px;
+  background-color: rgba(50, 50, 50, 0.5);
+  transition: background-color 0.5s;
+}
+
+.TermsList #return:hover {
+  background-color: rgba(100, 100, 100, 0.5);
+}
+
+.TermsList #return:active {
+  background-color: rgba(150, 150, 150, 0.5);
+}
