@@ -24,7 +24,7 @@ const TermsList = ({ terms, isHidden }) => {
         {terms.map((term) => (
           <>
             <li
-              key={term.replaceAll(' ', '-')}
+              key={term.replace(/ /g, '-')}
               onClick={() => setActiveTerm(term)}
             >
               <div className='term'>

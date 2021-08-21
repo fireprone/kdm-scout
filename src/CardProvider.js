@@ -13,7 +13,7 @@ const CardProvider = (() => {
       armor: 1,
       location: 'Waist',
       origin: 'Starting Gear',
-      terms: ['Savage', 'Fragile'],
+      terms: [],
     },
   };
 
@@ -23,7 +23,7 @@ const CardProvider = (() => {
 
   const getImagePath = (cardName) => {
     if (getCard(cardName)) {
-      cardName = cardName.replaceAll(' ', '-').toLowerCase();
+      cardName = cardName.replace(/ /g, '-').toLowerCase();
       return `${cardName}.png`;
     }
 
