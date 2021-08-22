@@ -22,17 +22,12 @@ const TermsList = ({ terms, isHidden }) => {
       </div>
       <ul>
         {terms.map((term) => (
-          <>
-            <li
-              key={term.replace(/ /g, '-')}
-              onClick={() => setActiveTerm(term)}
-            >
-              <div className='term'>
-                {term}
-                <MdKeyboardArrowRight />
-              </div>
-            </li>
-          </>
+          <li key={term.replace(/ /g, '-')} onClick={() => setActiveTerm(term)}>
+            <div className='term'>
+              {term}
+              <MdKeyboardArrowRight />
+            </div>
+          </li>
         ))}
       </ul>
     </div>

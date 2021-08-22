@@ -1,24 +1,10 @@
-const CardProvider = (() => {
-  const cards = {
-    'Founding Stone': {
-      keywords: 'Weapon',
-      speed: 2,
-      accuracy: 7,
-      strength: 1,
-      origin: 'Starting Gear',
-      terms: ['Archive'],
-    },
-    Cloth: {
-      keywords: 'Armor',
-      armor: 1,
-      location: 'Waist',
-      origin: 'Starting Gear',
-      terms: [],
-    },
-  };
+import cardInfo from './cardInfo.json';
 
+const CardProvider = (() => {
   const getCard = (cardName) => {
-    return cards.hasOwnProperty(cardName) ? cards[cardName] : { terms: [] };
+    return cardInfo.hasOwnProperty(cardName)
+      ? cardInfo[cardName]
+      : { terms: [] };
   };
 
   const getImagePath = (cardName) => {

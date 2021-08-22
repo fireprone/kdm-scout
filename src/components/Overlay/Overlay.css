@@ -29,30 +29,44 @@
   margin: 0 auto;
 }
 
-#Overlay .card {
-  display: block;
-  padding-top: 15%;
-  width: 70%;
-  transition: padding-top 0.5s;
-}
-
-#Overlay.hidden .card {
-  padding-top: 0%;
-}
-
-#Overlay .card {
+#Overlay #card-preview {
   position: relative;
+  background-color: #111;
+  border-radius: 30px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+  width: 70%;
   z-index: 4;
   left: 0;
   right: 0;
+  margin-top: 15%;
   margin-left: auto;
   margin-right: auto;
+  transition: margin-top 0.5s;
 }
 
-#Overlay.hidden .TermsList ul {
-  padding-top: 2%;
+#Overlay.hidden #card-preview {
+  margin-top: 0%;
 }
 
-#Overlay .header {
-  font-weight: bold;
+#Overlay #flip-card {
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transform-origin: center right;
+  transition: transform 1s;
+}
+
+#Overlay .card-front,
+#Overlay .card-back {
+  pointer-events: none;
+  backface-visibility: hidden;
+}
+
+#Overlay .is-flipped {
+  transform: translateX(-100%) rotateY(-180deg);
+}
+
+#Overlay .card-back {
+  position: absolute;
+  left: 0;
+  transform: rotateY(180deg);
 }
