@@ -4,7 +4,7 @@ import LoadoutGrid from './components/LoadoutGrid/LoadoutGrid';
 import Overlay from './components/Overlay/Overlay';
 
 function App() {
-  const [focusedCard, setFocusedCard] = useState({ name: '', img: '' });
+  const [focusedCard, setFocusedCard] = useState({ name: '', origin: '' });
 
   return (
     <div className='App'>

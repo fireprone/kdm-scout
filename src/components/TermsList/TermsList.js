@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
 import './TermsList.css';
+import React, { useState, useEffect } from 'react';
 import glossaryTerms from '../../glossaryTerms';
 import { MdKeyboardArrowRight, MdKeyboardArrowUp } from 'react-icons/md';
 
@@ -12,7 +12,7 @@ const TermsList = ({ terms, isHidden }) => {
 
   return (
     <div className='TermsList'>
-      <div id='termDefinition' className={activeTerm ? '' : 'hidden'}>
+      <div id='term-definition' className={activeTerm ? '' : 'hidden'}>
         <h2>{activeTerm}</h2>
         <hr />
         <p>{glossaryTerms[activeTerm]}</p>

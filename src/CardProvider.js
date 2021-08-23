@@ -1,22 +1,24 @@
 import cardInfo from './cardInfo.json';
 
 const CardProvider = (() => {
-  const getCard = (cardName) => {
-    return cardInfo.hasOwnProperty(cardName)
-      ? cardInfo[cardName]
-      : { terms: [] };
-  };
-
-  const getImagePath = (cardName) => {
-    if (getCard(cardName)) {
-      cardName = cardName.replace(/ /g, '-').toLowerCase();
-      return `${cardName}.png`;
+  const getCard = async (cardName) => {
+    let cardObj = {};
+    if (cardInfo.hasOwnProperty(cardName)) {
+      cardObj = cardInfo[cardName];
     }
 
-    return null;
+    if (cardName !== '') {
+      const cardImageName = `${cardName.replace(/ /g, '-').toLowerCase()}.png`;
+      const cardImageFile = await import(`./img/${cardImageName}`);
+      cardObj.image = cardImageFile.default;
+    } else {
+      cardObj.image = '';
+    }
+
+    return cardObj;
   };
 
-  return { getCard, getImagePath };
+  return { getCard };
 })();
 
 export default CardProvider;

@@ -3,13 +3,13 @@
   opacity: 1;
 }
 
-#overlayBg {
+#overlay-bg {
   opacity: 0.9;
   background-color: #222;
 }
 
 #Overlay,
-#overlayBg {
+#overlay-bg {
   position: fixed;
   top: 0;
   left: 0;
@@ -19,12 +19,12 @@
 }
 
 #Overlay.hidden,
-#Overlay.hidden #overlayBg {
+#Overlay.hidden #overlay-bg {
   pointer-events: none;
   opacity: 0;
 }
 
-#overlayContent {
+#overlay-content {
   max-width: 30rem;
   margin: 0 auto;
 }

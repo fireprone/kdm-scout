@@ -13,7 +13,7 @@
   transition: padding-top 1.5s;
 }
 
-.TermsList #termDefinition {
+.TermsList #term-definition {
   background-color: #444;
   z-index: 3;
   padding-top: 3rem;
@@ -21,7 +21,7 @@
 }
 
 .TermsList ul,
-.TermsList #termDefinition {
+.TermsList #term-definition {
   position: absolute;
   left: 0;
   right: 0;
@@ -34,19 +34,19 @@
   float: right;
 }
 
-.TermsList #termDefinition p {
+.TermsList #term-definition p {
   overflow: auto;
   max-height: 10rem;
   padding: 1rem;
 }
 
-.TermsList #termDefinition svg {
+.TermsList #term-definition svg {
   position: relative;
   left: 0;
 }
 
-.TermsList #termDefinition.hidden,
-.hidden .TermsList #termDefinition {
+.TermsList #term-definition.hidden,
+.hidden .TermsList #term-definition {
   margin-top: -250px;
 }
 
