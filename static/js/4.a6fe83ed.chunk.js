@@ -1,0 +1,2 @@
+(this["webpackJsonpkdm-scout"]=this["webpackJsonpkdm-scout"]||[]).push([[4],{46:function(s,t,n){"use strict";n.r(t),t.default=n.p+"static/media/founding-stone.4f00a321.png"}}]);
+//# sourceMappingURL=4.a6fe83ed.chunk.js.map

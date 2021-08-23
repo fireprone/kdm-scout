@@ -1,22 +1,29 @@
 {
   "files": {
-    "main.css": "/kdm-scout/static/css/main.30c86299.chunk.css",
-    "main.js": "/kdm-scout/static/js/main.21f80851.chunk.js",
-    "main.js.map": "/kdm-scout/static/js/main.21f80851.chunk.js.map",
-    "runtime-main.js": "/kdm-scout/static/js/runtime-main.d2d0cab6.js",
-    "runtime-main.js.map": "/kdm-scout/static/js/runtime-main.d2d0cab6.js.map",
-    "static/js/2.08476fc5.chunk.js": "/kdm-scout/static/js/2.08476fc5.chunk.js",
-    "static/js/2.08476fc5.chunk.js.map": "/kdm-scout/static/js/2.08476fc5.chunk.js.map",
+    "main.css": "/kdm-scout/static/css/main.c0ff8611.chunk.css",
+    "main.js": "/kdm-scout/static/js/main.49c7dcd4.chunk.js",
+    "main.js.map": "/kdm-scout/static/js/main.49c7dcd4.chunk.js.map",
+    "runtime-main.js": "/kdm-scout/static/js/runtime-main.11db7f46.js",
+    "runtime-main.js.map": "/kdm-scout/static/js/runtime-main.11db7f46.js.map",
+    "static/js/2.b260a7da.chunk.js": "/kdm-scout/static/js/2.b260a7da.chunk.js",
+    "static/js/2.b260a7da.chunk.js.map": "/kdm-scout/static/js/2.b260a7da.chunk.js.map",
+    "static/js/3.1306468c.chunk.js": "/kdm-scout/static/js/3.1306468c.chunk.js",
+    "static/js/3.1306468c.chunk.js.map": "/kdm-scout/static/js/3.1306468c.chunk.js.map",
+    "static/js/4.a6fe83ed.chunk.js": "/kdm-scout/static/js/4.a6fe83ed.chunk.js",
+    "static/js/4.a6fe83ed.chunk.js.map": "/kdm-scout/static/js/4.a6fe83ed.chunk.js.map",
+    "static/js/5.bf5aa757.chunk.js": "/kdm-scout/static/js/5.bf5aa757.chunk.js",
+    "static/js/5.bf5aa757.chunk.js.map": "/kdm-scout/static/js/5.bf5aa757.chunk.js.map",
     "index.html": "/kdm-scout/index.html",
-    "static/css/main.30c86299.chunk.css.map": "/kdm-scout/static/css/main.30c86299.chunk.css.map",
-    "static/js/2.08476fc5.chunk.js.LICENSE.txt": "/kdm-scout/static/js/2.08476fc5.chunk.js.LICENSE.txt",
-    "static/media/cloth.6795879b.png": "/kdm-scout/static/media/cloth.6795879b.png",
-    "static/media/founding-stone.4f00a321.png": "/kdm-scout/static/media/founding-stone.4f00a321.png"
+    "static/css/main.c0ff8611.chunk.css.map": "/kdm-scout/static/css/main.c0ff8611.chunk.css.map",
+    "static/js/2.b260a7da.chunk.js.LICENSE.txt": "/kdm-scout/static/js/2.b260a7da.chunk.js.LICENSE.txt",
+    "static/media/cloth.png": "/kdm-scout/static/media/cloth.6795879b.png",
+    "static/media/founding-stone.png": "/kdm-scout/static/media/founding-stone.4f00a321.png",
+    "static/media/starting-gear.png": "/kdm-scout/static/media/starting-gear.14a4fbd0.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.d2d0cab6.js",
-    "static/js/2.08476fc5.chunk.js",
-    "static/css/main.30c86299.chunk.css",
-    "static/js/main.21f80851.chunk.js"
+    "static/js/runtime-main.11db7f46.js",
+    "static/js/2.b260a7da.chunk.js",
+    "static/css/main.c0ff8611.chunk.css",
+    "static/js/main.49c7dcd4.chunk.js"
   ]
 }
