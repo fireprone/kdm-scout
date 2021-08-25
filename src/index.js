@@ -1,6 +1,6 @@
+import './index.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
 import { Swappable } from '@shopify/draggable';
 
@@ -13,6 +13,7 @@ ReactDOM.render(
 
 const draggable = new Swappable(document.getElementById('loadout-grid'), {
   draggable: '.card',
+  distance: 10,
   mirror: {
     constrainDimensions: true,
   },
