@@ -1,7 +1,6 @@
 import './Overlay.css';
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import LoadoutCard from '../LoadoutCard/LoadoutCard';
-import CardProvider from '../../CardProvider';
 import TermsList from '../TermsList/TermsList';
 
 const Overlay = ({ focusedCard }) => {

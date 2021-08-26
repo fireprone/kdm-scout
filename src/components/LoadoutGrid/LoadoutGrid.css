@@ -1,17 +1,11 @@
 #loadout-grid {
-  display: inline-block;
-  color: #fff;
-  width: 97%;
-  padding-left: 3%;
+  display: grid;
+  gap: 1.5%;
+  grid-template: repeat(3, minmax(100px, 1fr)) / repeat(3, minmax(100px, 1fr));
 }
 
 .loadout-space {
   position: relative;
-  display: inline-block;
   background-color: #333;
-  height: auto;
-  margin: 0.25rem;
   border-radius: 10%;
-  width: 30%;
-  padding-top: 30%;
 }

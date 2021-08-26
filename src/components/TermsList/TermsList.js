@@ -1,5 +1,5 @@
 import './TermsList.css';
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import glossaryTerms from '../../glossaryTerms';
 import { MdKeyboardArrowRight, MdKeyboardArrowUp } from 'react-icons/md';
 

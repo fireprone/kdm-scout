@@ -6,7 +6,8 @@ button.a2hs {
 }
 
 #loadout-section {
+  width: 95vmin;
   max-width: 40rem;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 0.75rem;
 }

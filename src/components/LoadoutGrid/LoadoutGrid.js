@@ -1,5 +1,4 @@
 import './LoadoutGrid.css';
-import React from 'react';
 import LoadoutCard from '../LoadoutCard/LoadoutCard';
 
 const LoadoutGrid = ({ clickListener }) => {
@@ -7,7 +6,7 @@ const LoadoutGrid = ({ clickListener }) => {
 
   return (
     <>
-      <div id='loadout-grid' className='container'>
+      <div id='loadout-grid'>
         {numbers.map((number) => (
           <div key={`space-${number}`} className='loadout-space'>
             {number === 5 ? (

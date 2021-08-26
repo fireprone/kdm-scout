@@ -4,6 +4,15 @@
   margin: 0 auto;
 }
 
+@media only screen and (max-height: 660px) and (orientation: landscape) {
+  .TermsList {
+    position: absolute;
+    width: 30%;
+    top: 0;
+    right: 0;
+  }
+}
+
 .TermsList ul {
   list-style-type: none;
   background-color: #111;
@@ -17,6 +26,7 @@
   background-color: #444;
   z-index: 3;
   padding-top: 3rem;
+  /* height: 30vh; */
   transition: margin-top 0.75s ease-out;
 }
 

@@ -25,7 +25,7 @@
 }
 
 #overlay-content {
-  max-width: 30rem;
+  max-width: 95vmin;
   margin: 0 auto;
 }
 
@@ -38,7 +38,7 @@
   z-index: 4;
   left: 0;
   right: 0;
-  margin-top: 15%;
+  margin-top: 5vmin;
   margin-left: auto;
   margin-right: auto;
   transition: margin-top 0.5s;
