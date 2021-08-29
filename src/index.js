@@ -3,6 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import { Swappable } from '@shopify/draggable';
+import * as serviceWorkerRegistration from './serverWorkerRegistration';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -11,6 +12,7 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
+// eslint-disable-next-line
 const draggable = new Swappable(document.getElementById('loadout-grid'), {
   draggable: '.card',
   distance: 10,
@@ -18,3 +20,5 @@ const draggable = new Swappable(document.getElementById('loadout-grid'), {
     constrainDimensions: true,
   },
 });
+
+serviceWorkerRegistration.register();

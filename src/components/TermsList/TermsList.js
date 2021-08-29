@@ -1,7 +1,8 @@
 import './TermsList.css';
 import { useState, useEffect } from 'react';
 import glossaryTerms from '../../glossaryTerms';
-import { MdKeyboardArrowRight, MdKeyboardArrowUp } from 'react-icons/md';
+import { MdKeyboardArrowUp } from 'react-icons/md';
+import LibraryBooksIcon from '@material-ui/icons/LibraryBooks';
 
 const TermsList = ({ terms, isHidden }) => {
   const [activeTerm, setActiveTerm] = useState('');
@@ -25,7 +26,7 @@ const TermsList = ({ terms, isHidden }) => {
           <li key={term.replace(/ /g, '-')} onClick={() => setActiveTerm(term)}>
             <div className='term'>
               {term}
-              <MdKeyboardArrowRight />
+              <LibraryBooksIcon />
             </div>
           </li>
         ))}

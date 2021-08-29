@@ -1,11 +1,11 @@
-button.a2hs {
-  display: none;
-  position: absolute;
-  top: 1px;
-  left: 1px;
+.App {
+  height: 100vh;
 }
 
 #loadout-section {
+  position: relative;
+  top: 50%;
+  transform: translate(0, -50%);
   width: 95vmin;
   max-width: 40rem;
   margin: 0 auto;
