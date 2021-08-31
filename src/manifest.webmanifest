@@ -1,0 +1,22 @@
+{
+  "background_color": "black",
+  "theme_color": "black",
+  "description": "Showdown helper for KDM",
+  "display": "fullscreen",
+  "icons": [
+    {
+      "src": "public/logo192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "public/logo512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "name": "KDM Showdown Helper",
+  "short_name": "KDM Scout",
+  "start_url": "/index.html"
+}
