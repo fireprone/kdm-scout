@@ -17,7 +17,7 @@ const LoadoutCard = (props) => {
   return (
     <>
       {!cardInfo.image ? (
-        <div className='loading card' />
+        <div className='card' />
       ) : (
         <img
           onClick={() =>

@@ -8,7 +8,8 @@ function App() {
 
   return (
     <div className='App'>
-      <Overlay focusedCard={focusedCard} />
+      <Overlay focusedCard={focusedCard} setFocusedCard={setFocusedCard} />
+
       <div id='loadout-section'>
         <LoadoutGrid clickListener={setFocusedCard} />
       </div>

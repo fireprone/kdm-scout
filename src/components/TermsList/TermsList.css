@@ -1,7 +1,13 @@
 .TermsList {
-  position: relative;
-  width: 60%;
+  position: absolute;
+  background-color: #111;
+  top: 0;
+  left: 0;
+  right: 0;
   margin: 0 auto;
+  border-radius: 30px 30px 30px 30px;
+  width: 60%;
+  padding-top: 70%;
 }
 
 @media only screen and (max-height: 660px) and (orientation: landscape) {
@@ -15,28 +21,20 @@
 
 .TermsList ul {
   list-style-type: none;
-  background-color: #111;
   z-index: 2;
-  padding-top: 3rem;
-  padding-bottom: 1.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   transition: padding-top 1.5s;
 }
 
 .TermsList #term-definition {
+  position: absolute;
   background-color: #444;
   z-index: 3;
-  padding-top: 3rem;
+  padding-top: 1rem;
   /* height: 30vh; */
   transition: margin-top 0.75s ease-out;
-}
-
-.TermsList ul,
-.TermsList #term-definition {
-  position: absolute;
-  left: 0;
-  right: 0;
   border-radius: 0 0 30px 30px;
-  margin-top: -2rem;
 }
 
 .TermsList ul svg {
@@ -55,10 +53,10 @@
   left: 0;
 }
 
-.TermsList #term-definition.hidden,
+/* .TermsList #term-definition.hidden,
 .hidden .TermsList #term-definition {
   margin-top: -250px;
-}
+} */
 
 .TermsList h2 {
   text-align: center;
