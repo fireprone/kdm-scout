@@ -26,7 +26,7 @@
 
 #overlay-content {
   position: relative;
-  max-width: 30rem;
+  max-width: 35rem;
   margin: 0 auto;
   top: 0;
   /* transform: translate(0, -75%); */
@@ -73,4 +73,10 @@
   position: absolute;
   left: 0;
   transform: rotateY(180deg);
+}
+
+@media only screen and (max-height: 660px) and (orientation: landscape) {
+  #Overlay .TermsList + #card-preview {
+    margin-left: 0;
+  }
 }

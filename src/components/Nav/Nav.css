@@ -1,20 +1,23 @@
-/* .Nav {
-  position: absolute;
+.Nav {
+  /* position: absolute;
   bottom: 0;
-  left: 0;
-  height: 15vmax;
-  width: 100%;
+  left: 0; */
+  /* height: 15vmax;
+  width: 100%; */
+  position: relative;
+  height: 100%;
   background: linear-gradient(
     180deg,
     rgba(34, 34, 34, 1) 5%,
     rgba(17, 17, 17, 1) 50%
   );
-} */
+}
 
-/* .Nav ul {
+.Nav ul {
   position: absolute;
-  bottom: 1rem;
   width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .Nav li {
@@ -22,4 +25,24 @@
   text-align: center;
   width: 33%;
   color: #c1c0bb;
-} */
+}
+
+@media only screen and (orientation: landscape) {
+  .Nav {
+    background: linear-gradient(
+      270deg,
+      rgba(34, 34, 34, 1) 5%,
+      rgba(17, 17, 17, 1) 50%
+    );
+  }
+
+  .Nav ul {
+    height: 100%;
+  }
+
+  .Nav li {
+    display: block;
+    text-align: left;
+    padding: 1rem;
+  }
+}

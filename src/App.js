@@ -12,15 +12,15 @@ function App() {
     <div className='App'>
       <Overlay focusedCard={focusedCard} setFocusedCard={setFocusedCard} />
       <div id='section-grid'>
-        <div id='context-section'>
+        <section id='context-section'>
           <ContextMenu />
-        </div>
-        <div id='loadout-section'>
+        </section>
+        <section id='loadout-section'>
           <LoadoutGrid clickListener={setFocusedCard} />
-        </div>
-        <div id='nav-section'>
+        </section>
+        <section id='nav-section'>
           <Nav />
-        </div>
+        </section>
       </div>
     </div>
   );

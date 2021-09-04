@@ -6,6 +6,7 @@
   top: 50%;
   transform: translate(0, -50%);
   margin: 0 auto;
+  width: 95vw;
 }
 
 @media only screen and (orientation: landscape) {

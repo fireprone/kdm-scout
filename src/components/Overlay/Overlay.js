@@ -25,6 +25,15 @@ const Overlay = ({ focusedCard }) => {
   return (
     <div id='Overlay' className={isShown ? '' : 'hidden'}>
       <div id='overlay-content'>
+        {focusedCard.terms && focusedCard.terms.length ? (
+          <TermsList
+            terms={focusedCard.terms}
+            isShown={isShown}
+            style={trail[1]}
+          />
+        ) : (
+          ''
+        )}
         <animated.div id='card-preview' style={trail[0]}>
           <div
             id='flip-card'
@@ -35,15 +44,6 @@ const Overlay = ({ focusedCard }) => {
             <LoadoutCard name={focusedCard.origin} class='card-back' />
           </div>
         </animated.div>
-        {focusedCard.terms && focusedCard.terms.length ? (
-          <TermsList
-            terms={focusedCard.terms}
-            isShown={isShown}
-            style={trail[1]}
-          />
-        ) : (
-          ''
-        )}
       </div>
       <div
         id='overlay-bg'
