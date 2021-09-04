@@ -1,11 +1,22 @@
 #loadout-grid {
+  position: relative;
   display: grid;
-  gap: 1.5%;
+  gap: 1vmin;
   grid-template: repeat(3, minmax(100px, 1fr)) / repeat(3, minmax(100px, 1fr));
+  top: 50%;
+  transform: translate(0, -50%);
+  margin: 0 auto;
+}
+
+@media only screen and (orientation: landscape) {
+  #loadout-grid {
+    width: 70vh;
+  }
 }
 
 .loadout-space {
   position: relative;
   background-color: #333;
   border-radius: 10%;
+  max-width: 25rem;
 }

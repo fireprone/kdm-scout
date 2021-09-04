@@ -1,6 +1,6 @@
 .TermsList {
   position: absolute;
-  background-color: #111;
+  background-color: #000;
   top: 0;
   left: 0;
   right: 0;
@@ -12,10 +12,14 @@
 
 @media only screen and (max-height: 660px) and (orientation: landscape) {
   .TermsList {
-    position: absolute;
+    position: fixed;
     width: 30%;
-    top: 0;
-    right: 0;
+    left: unset;
+    padding-top: 0;
+  }
+
+  .TermsList div#term-definition {
+    border-radius: 30px 30px 30px 30px;
   }
 }
 

@@ -1,0 +1,25 @@
+/* .Nav {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 15vmax;
+  width: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(34, 34, 34, 1) 5%,
+    rgba(17, 17, 17, 1) 50%
+  );
+} */
+
+/* .Nav ul {
+  position: absolute;
+  bottom: 1rem;
+  width: 100%;
+}
+
+.Nav li {
+  display: inline-block;
+  text-align: center;
+  width: 33%;
+  color: #c1c0bb;
+} */
