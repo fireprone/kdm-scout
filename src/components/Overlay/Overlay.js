@@ -24,7 +24,15 @@ const Overlay = ({ focusedCard }) => {
 
   return (
     <div id='Overlay' className={isShown ? '' : 'hidden'}>
-      <div id='overlay-content'>
+      <animated.div id='card-preview' style={trail[0]}>
+        <div
+          id='flip-card'
+          className={isFlipped ? 'is-flipped' : ''}
+          onClick={() => setIsFlipped(!isFlipped)}
+        >
+          <LoadoutCard name={focusedCard.name} class='card-front' />
+          <LoadoutCard name={focusedCard.origin} class='card-back' />
+        </div>
         {focusedCard.terms && focusedCard.terms.length ? (
           <TermsList
             terms={focusedCard.terms}
@@ -34,17 +42,7 @@ const Overlay = ({ focusedCard }) => {
         ) : (
           ''
         )}
-        <animated.div id='card-preview' style={trail[0]}>
-          <div
-            id='flip-card'
-            className={isFlipped ? 'is-flipped' : ''}
-            onClick={() => setIsFlipped(!isFlipped)}
-          >
-            <LoadoutCard name={focusedCard.name} class='card-front' />
-            <LoadoutCard name={focusedCard.origin} class='card-back' />
-          </div>
-        </animated.div>
-      </div>
+      </animated.div>
       <div
         id='overlay-bg'
         onClick={() => {

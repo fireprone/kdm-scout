@@ -26,26 +26,19 @@
 
 #overlay-content {
   position: relative;
-  max-width: 35rem;
   margin: 0 auto;
   top: 0;
-  /* transform: translate(0, -75%); */
   z-index: 5;
+  width: max-content;
 }
 
 #Overlay #card-preview {
   position: relative;
-  /* background-color: #111; */
-  /* border-radius: 30px; */
-  /* box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05), 0 15px 40px rgba(0, 0, 0, 0.2); */
-  width: 70%;
   z-index: 4;
   left: 0;
   right: 0;
-  margin-top: 5vmin;
-  margin-left: auto;
-  margin-right: auto;
-  /* transition: margin-top 0.5s; */
+  margin: 0 auto;
+  max-width: 25rem;
 }
 
 #Overlay.hidden #card-preview {
@@ -53,10 +46,12 @@
 }
 
 #Overlay #flip-card {
+  position: relative;
   cursor: pointer;
   transform-style: preserve-3d;
   transform-origin: center right;
   transition: transform 1s;
+  z-index: 2;
 }
 
 #Overlay .card-front,
@@ -78,5 +73,20 @@
 @media only screen and (max-height: 660px) and (orientation: landscape) {
   #Overlay .TermsList + #card-preview {
     margin-left: 0;
+  }
+
+  #Overlay #card-preview {
+    display: inline-block;
+    width: 100%;
+    max-width: unset;
+    margin-left: 2rem;
+  }
+
+  #Overlay .TermsList {
+    margin-right: 3rem;
+  }
+
+  #Overlay #flip-card {
+    width: 45%;
   }
 }
