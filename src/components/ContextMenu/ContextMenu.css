@@ -1,18 +1,23 @@
-/* .ContextMenu {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  height: 2rem;
-  width: 2rem;
-  background-color: #483d22;
-  padding: 0.5rem;
-  border-radius: 1rem;
-  cursor: pointer;
-} */
-
-/* .ContextMenu svg {
-  top: 50%;
-  left: 50%;
+.ContextMenu {
   position: relative;
-  transform: translate(-50%, -50%);
-} */
+  z-index: 2;
+  transition: transform 0.5s ease-out;
+  cursor: pointer;
+}
+
+.ContextMenu:hover {
+  transform: translateY(-50%);
+}
+
+.context-content {
+  background-color: #555;
+  padding: 2rem;
+}
+
+.context-tab {
+  text-align: center;
+  width: 30%;
+  margin: 0 auto;
+  border-radius: 0 0 45px 45px;
+  background-color: #555;
+}

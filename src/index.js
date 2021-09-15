@@ -2,7 +2,6 @@ import './index.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import { Swappable } from '@shopify/draggable';
 import * as serviceWorkerRegistration from './serverWorkerRegistration';
 
 ReactDOM.render(
@@ -12,13 +11,14 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-// eslint-disable-next-line
-const draggable = new Swappable(document.getElementById('loadout-grid'), {
-  draggable: '.card',
-  distance: 10,
-  mirror: {
-    constrainDimensions: true,
-  },
-});
-
 serviceWorkerRegistration.register();
+
+// const contextSectionElem = document.getElementById('context-section');
+// const contextMenuElem = contextSectionElem.querySelector('.ContextMenu');
+// window.addEventListener('resize', () => {
+//   if (contextSectionElem.clientHeight > 175) {
+//     contextMenuElem.style.transform = 'translateY(0)';
+//   } else {
+//     contextMenuElem.style.transform = 'translateY(-60%)';
+//   }
+// });

@@ -2,7 +2,7 @@
   position: relative;
   display: grid;
   gap: 1vmin;
-  grid-template: repeat(3, minmax(100px, 1fr)) / repeat(3, minmax(100px, 1fr));
+  grid-template: repeat(3, minmax(50px, 1fr)) / repeat(3, minmax(50px, 1fr));
   top: 50%;
   transform: translate(0, -50%);
   margin: 0 auto;
