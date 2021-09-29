@@ -4,13 +4,18 @@ import LoadoutGrid from './components/LoadoutGrid/LoadoutGrid';
 import Overlay from './components/Overlay/Overlay';
 import Nav from './components/Nav/Nav';
 import ContextMenu from './components/ContextMenu/ContextMenu';
+import { AnimatePresence } from 'framer-motion';
 
 function App() {
   const [focusedCard, setFocusedCard] = useState({ name: '', origin: '' });
 
   return (
     <div className='App'>
-      <Overlay focusedCard={focusedCard} setFocusedCard={setFocusedCard} />
+      <AnimatePresence>
+        {focusedCard.name && (
+          <Overlay focusedCard={focusedCard} setFocusedCard={setFocusedCard} />
+        )}
+      </AnimatePresence>
       <div id='section-grid'>
         <section id='context-section'>
           <ContextMenu />

@@ -1,36 +1,43 @@
 import './LoadoutCard.css';
 import { useEffect, useState } from 'react';
 import CardProvider from '../../CardProvider';
+import { motion } from 'framer-motion';
 
-const LoadoutCard = (props) => {
+const LoadoutCard = ({
+  whileTap,
+  onTapStart,
+  name,
+  clickListener,
+  classes,
+}) => {
   const [cardInfo, setCardInfo] = useState({ image: '', origin: '' });
 
   useEffect(
     () =>
       (async function loadCardData() {
-        const card = await CardProvider.getCard(props.name);
+        const card = await CardProvider.getCard(name);
         setCardInfo(card);
       })(),
-    [props.name]
+    [name]
   );
 
+  const style = {
+    backgroundImage: cardInfo.image
+      ? `url(${cardInfo.image})`
+      : 'linear-gradient(to bottom, rgba(255,255,255,1), rgba(200,200,200,1))',
+  };
+
   return (
-    <>
-      {!cardInfo.image ? (
-        <div className='card' />
-      ) : (
-        <img
-          onClick={() =>
-            props.clickListener
-              ? props.clickListener({ name: props.name, ...cardInfo })
-              : true
-          }
-          src={cardInfo.image}
-          className={`card ${props.class ? props.class : ''}`}
-          alt={`${props.name} Card`}
-        />
-      )}
-    </>
+    <motion.div
+      whileTap={whileTap}
+      onTapStart={onTapStart}
+      className={classes}
+      style={style}
+      onTap={() =>
+        clickListener ? clickListener({ name: name, ...cardInfo }) : true
+      }
+      layout
+    ></motion.div>
   );
 };
 
