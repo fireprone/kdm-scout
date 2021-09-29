@@ -1,8 +1,24 @@
-.loadout-space img {
+/* .loadout-space img {
   position: absolute;
   top: 0;
   left: 0;
   z-index: 1;
+} */
+
+/* .loadout-space img {
+  position: relative;
+  cursor: pointer;
+  pointer-events: none;
+}
+
+.loadout-space img:hover {
+  z-index: 2;
+} */
+
+div.newCard {
+  height: 100%;
+  background-size: contain;
+  border-radius: 10%;
 }
 
 div.card {
@@ -13,14 +29,4 @@ div.card {
 .card.loading {
   background-color: #eee;
   border-radius: 10%;
-}
-
-.draggable-source--is-dragging {
-  opacity: 0.2;
-}
-
-img.draggable-mirror {
-  z-index: 99;
-  width: 33%;
-  transition: top 0.2s, width 0.2s, height 0.2s;
 }

@@ -7,10 +7,15 @@ const CardProvider = (() => {
       cardObj = cardInfo[cardName];
     }
 
-    if (cardName !== '') {
+    if (cardName) {
       const cardImageName = `${cardName.replace(/ /g, '-').toLowerCase()}.png`;
-      const cardImageFile = await import(`./img/${cardImageName}`);
-      cardObj.image = cardImageFile.default;
+      try {
+        const cardImageFile = await import(`./img/${cardImageName}`);
+        cardObj.image = cardImageFile.default;
+      } catch {
+        console.error(`No such card with name '${cardName}'`);
+        cardObj.image = '';
+      }
     } else {
       cardObj.image = '';
     }

@@ -58,6 +58,7 @@
 #Overlay .card-back {
   pointer-events: none;
   backface-visibility: hidden;
+  padding-top: 100%;
 }
 
 #Overlay .is-flipped {
@@ -67,6 +68,7 @@
 #Overlay .card-back {
   position: absolute;
   left: 0;
+  top: 0;
   transform: rotateY(180deg);
 }
 
