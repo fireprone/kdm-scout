@@ -55,7 +55,7 @@ const LoadoutGrid = ({ clickListener }) => {
     }
   };
 
-  const dragEnd = (event, info) => {
+  const dragEnd = (_, info) => {
     const cellIndex = checkCellIndex(info);
 
     if (cellIndex >= 0 && cellIndex !== activeIndex) {

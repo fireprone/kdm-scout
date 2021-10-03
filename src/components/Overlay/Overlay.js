@@ -14,8 +14,8 @@ const Overlay = ({ focusedCard, setFocusedCard }) => {
       animate={{ opacity: 1, marginTop: '10vmin' }}
       exit={{ opacity: 0, marginTop: 0 }}
       transition={{
-        opacity: { type: 'tween', duration: 0.1 },
-        marginTop: { type: 'spring', duration: 0.75 },
+        opacity: { type: 'tween', duration: 0.3 },
+        marginTop: { type: 'tween', duration: 0.3 },
       }}
     >
       <div id='card-preview'>
@@ -29,12 +29,12 @@ const Overlay = ({ focusedCard, setFocusedCard }) => {
           <LoadoutCard
             whileTap={{ scale: 1.1 }}
             name={focusedCard.name}
-            classes='card card-front'
+            classes='card-front'
           />
           <LoadoutCard
             whileTap={{ scale: 1.1 }}
             name={focusedCard.origin}
-            classes='card card-back'
+            classes='card-back'
           />
         </motion.div>
         {focusedCard.terms && focusedCard.terms.length ? (

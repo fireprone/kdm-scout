@@ -31,7 +31,7 @@ const LoadoutCard = ({
     <motion.div
       whileTap={whileTap}
       onTapStart={onTapStart}
-      className={classes}
+      className={'card ' + classes}
       style={style}
       onTap={() =>
         clickListener ? clickListener({ name: name, ...cardInfo }) : true

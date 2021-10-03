@@ -26,14 +26,17 @@
 
 #context-section {
   grid-area: Context;
+  z-index: 3;
 }
 
 #loadout-section {
   grid-area: Body;
   position: relative;
   padding: 1rem 0;
+  z-index: 2;
 }
 
 #nav-section {
   grid-area: Nav;
+  z-index: 1;
 }

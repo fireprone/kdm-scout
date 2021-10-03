@@ -25,12 +25,11 @@ const TermsList = ({ terms, isShown }) => {
         {activeTerm && (
           <motion.div
             id='term-definition'
-            className={activeTerm ? '' : 'hidden'}
-            initial={{ paddingTop: 0 }}
-            animate={{ paddingTop: ['0%', '100%', '95%'] }}
-            exit={{ paddingTop: 0 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
             transition={{
-              paddingTop: { type: 'tween', duration: 0.5 },
+              marginTop: { type: 'spring', duration: 0.1 },
             }}
           >
             <h2>{activeTerm}</h2>

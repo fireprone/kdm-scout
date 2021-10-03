@@ -36,7 +36,6 @@ const Cell = forwardRef(
               onTapStart={onTapStart}
               name={cardName}
               clickListener={clickListener}
-              classes='newCard'
             />
           </motion.div>
         ) : (

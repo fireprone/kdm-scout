@@ -1,15 +1,6 @@
-div.newCard {
-  height: 100%;
-  background-size: contain;
-  border-radius: 10%;
-}
-
-div.card {
-  width: 100%;
+.card {
   padding-top: 100%;
-}
-
-.card.loading {
-  background-color: #eee;
   border-radius: 10%;
+  background-size: contain;
+  background-repeat: no-repeat;
 }

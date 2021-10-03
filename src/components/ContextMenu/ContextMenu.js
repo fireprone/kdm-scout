@@ -26,7 +26,7 @@ const ContextMenu = () => {
         transform: isExpanded ? 'translateY(-60%)' : 'translateY(0)',
       }}
     >
-      <div className='context-content'>Skinnery</div>
+      <div className='context-content'></div>
       <div className='context-tab'>
         <QueueIcon />
       </div>
