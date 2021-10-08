@@ -1,0 +1,2 @@
+(this["webpackJsonpkdm-scout"]=this["webpackJsonpkdm-scout"]||[]).push([[3],{112:function(s,t,a){"use strict";a.r(t),t.default=a.p+"static/media/bandages.2de85128.png"}}]);
+//# sourceMappingURL=3.b37aaac4.chunk.js.map
