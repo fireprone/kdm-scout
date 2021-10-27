@@ -1,2 +1,0 @@
-(this["webpackJsonpkdm-scout"]=this["webpackJsonpkdm-scout"]||[]).push([[13],{122:function(s,t,c){"use strict";c.r(t),t.default=c.p+"static/media/skinnery-save.604da9ec.png"}}]);
-//# sourceMappingURL=13.9bd6296e.chunk.js.map
