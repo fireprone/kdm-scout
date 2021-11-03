@@ -1,17 +1,39 @@
 {
-  "Founding Stone": {
-    "keywords": "Weapon",
+  "BANDAGES": {
+    "keywords": ["item"],
+    "origin": "Skinnery",
+    "terms": [],
+    "affinities": ["LB", "DG"]
+  },
+  "CLOTH": {
+    "keywords": ["armor"],
+    "armor": 1,
+    "location": "Waist",
+    "origin": "Starting Gear",
+    "terms": [],
+    "affinities": []
+  },
+  "FOUNDING STONE": {
+    "keywords": ["weapon", "melee", "stone"],
     "speed": 2,
     "accuracy": 7,
     "strength": 1,
     "origin": "Starting Gear",
-    "terms": ["Archive"]
+    "terms": ["Archive"],
+    "affinities": []
   },
-  "Cloth": {
-    "keywords": "Armor",
+  "RAWHIDE BOOTS": {
+    "keywords": ["armor", "set", "rawhide"],
     "armor": 1,
     "location": "Waist",
-    "origin": "Starting Gear",
-    "terms": []
+    "origin": "Skinnery",
+    "terms": ["Depart"],
+    "affinities": []
+  },
+  "RAWHIDE DRUM": {
+    "keywords": ["item", "rawhide", "instrument", "noisy"],
+    "origin": "Skinnery",
+    "terms": ["Arrival", "Encourage"],
+    "affinities": ["LG"]
   }
 }

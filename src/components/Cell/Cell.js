@@ -1,3 +1,5 @@
+//TODO: On motion end, remove 'translate-3d' attr
+
 import './Cell.css';
 import { forwardRef } from 'react';
 import LoadoutCard from '../LoadoutCard/LoadoutCard';

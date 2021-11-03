@@ -109,7 +109,7 @@
   "Defeat": "When the survivors are defeated by a monster, follow the defeat rules in the Aftermath section of the monster's story event.",
   "Defensive Spit Salve": "The Dung Beetle Knight's instinct. Described on the Dung Beetle Knight's showdown story event and basic action card.",
   "Deflect X": "A gear special rule. When you Deflect X, gain (or lose) deflect tokens until you have X of them. When you are hit, if you have any deflect tokens, you ignore that hit and lose a deflect token. When you Deflect X, you lose the benefits of Block.",
-  "Depart (As in, \"When you Depart\")": "These rules apply to departing survivors at the end of the Settlement Phase.",
+  "Depart": "These rules apply to departing survivors at the end of the Settlement Phase.",
   "Departing Survivors": "The survivors nominated to take part in the next hunt and showdown.",
   "Destroy Armor": "An attack effect that reduces armor points of a survivor hit location to 0 before applying damage.",
   "Destructible": "A terrain special rule. When a survivor collides with destructible terrain, stop their movement and archive the terrain. The survivor suffers 1 damage to a random hit location. When a monster collides with destructible terrain, archive the terrain.",

@@ -1,22 +1,46 @@
 .ContextMenu {
   position: relative;
-  z-index: 2;
-  transition: transform 0.5s ease-out;
+  /* background-color: #555; */
   cursor: pointer;
+  transition: transform 0.5s ease-out;
 }
 
-.ContextMenu:hover {
+/* .ContextMenu:hover {
   transform: translateY(-50%);
-}
+} */
 
 .context-content {
+  position: relative;
   background-color: #555;
-  padding: 2rem;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  width: 100vw;
+  height: 100%;
+}
+
+.context-content div:hover {
+  font-size: 3rem;
+}
+
+.context-content .card {
+  display: inline-block;
+  width: 33%;
+  padding-top: 33%;
+  margin: 0.5rem;
+}
+
+@media only screen and (orientation: landscape) {
+  .context-content .card {
+    width: 10rem;
+    padding-top: 10rem;
+  }
 }
 
 .context-tab {
   text-align: center;
-  width: 30%;
+  /* padding: 0.5rem; */
+  width: 50%;
   margin: 0 auto;
   border-radius: 0 0 45px 45px;
   background-color: #555;

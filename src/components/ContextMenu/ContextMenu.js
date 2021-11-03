@@ -1,36 +1,88 @@
 import './ContextMenu.css';
-import { useEffect, useState, useRef } from 'react';
-import QueueIcon from '@material-ui/icons/Queue';
+import { useEffect, useState } from 'react';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMoreSharp';
+import ExpandLessIcon from '@material-ui/icons/ExpandLess';
+import LoadoutCard from '../LoadoutCard/LoadoutCard';
+import Skinnery from '../../img/skinnery-save.png';
+import BoneSmith from '../../img/bone-smith-save.png';
+import OrganGrinder from '../../img/organ-grinder-save.png';
+import { motion } from 'framer-motion';
 
-const ContextMenu = () => {
-  const [isExpanded, setIsExpanded] = useState(false);
-  const ref = useRef(null);
+const ContextMenu = ({ clickListener }) => {
+  const [isExpanded, setIsExpanded] = useState(true); //TODO: set to true only for testing
+  const [selectedLocation, setSelectedLocation] = useState('');
+  const [wares, setWares] = useState([]);
 
   useEffect(() => {
-    const handleResize = () => {
-      console.log('test');
-      ref.current.clientHeight > 175
-        ? setIsExpanded(true)
-        : setIsExpanded(false);
-    };
+    if (selectedLocation) {
+      let cards = [];
+      const skinneryItems = require.context(
+        `../../img/Skinnery`,
+        false,
+        /\.(png|jpe?g|svg)$/
+      );
+      skinneryItems.keys().forEach((card) => {
+        const cardName = card
+          .replace('./', '')
+          .replace('-', ' ')
+          .replace('.png', '');
+        cards.push(cardName);
+      });
 
-    window.addEventListener('resize', handleResize);
-
-    return window.removeEventListener('resize', handleResize);
-  }, []);
+      setWares(cards);
+    }
+  }, [selectedLocation]);
 
   return (
-    <div
-      className='ContextMenu'
-      style={{
-        transform: isExpanded ? 'translateY(-60%)' : 'translateY(0)',
-      }}
-    >
-      <div className='context-content'></div>
-      <div className='context-tab'>
-        <QueueIcon />
-      </div>
-    </div>
+    // <div
+    //   className='ContextMenu'
+    //   style={{
+    //     transform: isExpanded ? 'translateY(0)' : 'translateY(-100%)',
+    //   }}
+    // >
+    <>
+      <motion.div className='context-content'>
+        {wares.length ? (
+          wares.map((ware, i) => (
+            <LoadoutCard
+              key={`ware-${i}`}
+              whileTap={{ scale: 1.2 }}
+              name={ware}
+              clickListener={clickListener}
+            />
+          ))
+        ) : (
+          <>
+            <motion.div
+              style={{
+                backgroundImage: `linear-gradient(to left bottom, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 1)), url(${Skinnery})`,
+              }}
+              onTap={() => setSelectedLocation('Skinnery')}
+            >
+              Skinnery
+            </motion.div>
+            <div
+              style={{
+                backgroundImage: `linear-gradient(to left bottom, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 1)), url(${BoneSmith})`,
+              }}
+            >
+              Bone Smith
+            </div>
+            <div
+              style={{
+                backgroundImage: `linear-gradient(to left bottom, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 1)), url(${OrganGrinder})`,
+              }}
+            >
+              Organ Grinder
+            </div>
+          </>
+        )}
+      </motion.div>
+      {/* <div className='context-tab'>
+        <ExpandMoreIcon />
+      </div> */}
+      {/* </div> */}
+    </>
   );
 };
 

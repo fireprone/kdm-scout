@@ -22,7 +22,7 @@ const Overlay = ({ focusedCard, setFocusedCard }) => {
         <motion.div
           id='flip-card'
           className={isFlipped ? 'is-flipped' : ''}
-          onClick={() => setIsFlipped(!isFlipped)}
+          onTap={() => setIsFlipped(!isFlipped)}
           initial={{ marginTop: 0 }}
           animate={{ marginTop: '2rem' }}
         >
@@ -43,12 +43,12 @@ const Overlay = ({ focusedCard, setFocusedCard }) => {
           ''
         )}
       </div>
-      <div
+      <motion.div
         id='overlay-bg'
-        onClick={() => {
+        onTap={() => {
           setFocusedCard({ name: '', origin: '' });
         }}
-      ></div>
+      ></motion.div>
     </motion.div>
   );
 };

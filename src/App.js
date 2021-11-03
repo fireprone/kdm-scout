@@ -8,7 +8,6 @@ import { AnimatePresence } from 'framer-motion';
 
 function App() {
   const [focusedCard, setFocusedCard] = useState({ name: '', origin: '' });
-
   return (
     <div className='App'>
       <AnimatePresence>
@@ -18,7 +17,7 @@ function App() {
       </AnimatePresence>
       <div id='section-grid'>
         <section id='context-section'>
-          <ContextMenu />
+          <ContextMenu clickListener={setFocusedCard} />
         </section>
         <section id='loadout-section'>
           <LoadoutGrid clickListener={setFocusedCard} />

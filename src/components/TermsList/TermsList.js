@@ -35,20 +35,23 @@ const TermsList = ({ terms, isShown }) => {
             <h2>{activeTerm}</h2>
             <hr />
             <p>{glossaryTerms[activeTerm]}</p>
-            <div id='return' onClick={() => setActiveTerm('')}>
+            <motion.div id='return' onTap={() => setActiveTerm('')}>
               <MdKeyboardArrowUp />
-            </div>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
       <ul>
         {terms.map((term) => (
-          <li key={term.replace(/ /g, '-')} onClick={() => setActiveTerm(term)}>
+          <motion.li
+            key={term.replace(/ /g, '-')}
+            onTap={() => setActiveTerm(term)}
+          >
             <div className='term'>
               {term}
               <LibraryBooksIcon />
             </div>
-          </li>
+          </motion.li>
         ))}
       </ul>
     </motion.div>
