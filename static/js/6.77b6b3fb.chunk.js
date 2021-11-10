@@ -1,2 +1,0 @@
-(this["webpackJsonpkdm-scout"]=this["webpackJsonpkdm-scout"]||[]).push([[6],{118:function(s,t,e){"use strict";e.r(t),t.default=e.p+"static/media/rawhide-gloves.0271ebb6.png"}}]);
-//# sourceMappingURL=6.77b6b3fb.chunk.js.map
