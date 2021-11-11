@@ -33,12 +33,12 @@ const Overlay = ({ focusedCard, setFocusedCard }) => {
           />
           <LoadoutCard
             whileTap={{ scale: 1.1 }}
-            name={focusedCard.origin}
+            name={focusedCard.Origin}
             classes='card-back'
           />
         </motion.div>
-        {focusedCard.terms && focusedCard.terms.length ? (
-          <TermsList terms={focusedCard.terms} />
+        {focusedCard.Terms && focusedCard.Terms.length ? (
+          <TermsList terms={focusedCard.Terms} />
         ) : (
           ''
         )}

@@ -8,7 +8,7 @@ const CardProvider = (() => {
     if (cardName && cardInfo.hasOwnProperty(cardName)) {
       cardObj = cardInfo[cardName];
       const cardImageName = `${cardName.replace(/ /g, '-').toLowerCase()}.png`;
-      const cardImageOrigin = `${cardObj.origin.replace(/ /g, '')}`;
+      const cardImageOrigin = `${cardObj.Origin.replace(/ /g, '')}`;
       try {
         const cardImageFile = await import(
           `./img/${cardImageOrigin}/${cardImageName}`

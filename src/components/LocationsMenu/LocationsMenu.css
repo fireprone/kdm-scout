@@ -1,0 +1,65 @@
+.LocationsMenu {
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.5s ease-out;
+}
+
+.locations-content {
+  position: relative;
+  display: inline-flex;
+  background-color: #555;
+  width: 100vw;
+  height: 100%;
+}
+
+.locations-content .location {
+  display: inline-block;
+  width: 33%;
+  height: 100%;
+  background-position: center;
+  text-align: center;
+}
+
+.locations-content #location-exit {
+  position: relative;
+  height: 100%;
+  width: 5rem;
+  background-color: darkgray;
+  text-align: center;
+}
+
+.locations-content #location-exit svg {
+  position: relative;
+  top: 50%;
+  transform: translate(0, -50%);
+  font-size: 2rem;
+}
+
+.locations-content #location-cards {
+  width: 90%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+.locations-content #location-cards div {
+  display: inline-block;
+  margin: 0.5rem;
+}
+
+.locations-content .card {
+  width: 10rem;
+  padding-top: 10rem;
+}
+
+#activeCard {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
+
+@media only screen and (orientation: landscape) {
+  .locations-content {
+    width: 100%;
+  }
+}

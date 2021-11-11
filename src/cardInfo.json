@@ -1,39 +1,99 @@
 {
   "BANDAGES": {
-    "keywords": ["item"],
-    "origin": "Skinnery",
-    "terms": [],
-    "affinities": ["LB", "DG"]
+    "Keywords": ["item"],
+    "Stats": {},
+    "Origin": "Skinnery",
+    "Terms": [],
+    "Affinities": ["LB", "DG"]
   },
   "CLOTH": {
-    "keywords": ["armor"],
-    "armor": 1,
-    "location": "Waist",
-    "origin": "Starting Gear",
-    "terms": [],
-    "affinities": []
+    "Keywords": ["armor"],
+    "Stats": {
+      "Armor": 1,
+      "Location": "Waist"
+    },
+    "Origin": "Starting Gear",
+    "Terms": [],
+    "Affinities": []
   },
-  "FOUNDING STONE": {
-    "keywords": ["weapon", "melee", "stone"],
-    "speed": 2,
-    "accuracy": 7,
-    "strength": 1,
-    "origin": "Starting Gear",
-    "terms": ["Archive"],
-    "affinities": []
+  "FOUNDING-STONE": {
+    "Keywords": ["weapon", "melee", "stone"],
+    "Stats": {
+      "Speed": 2,
+      "Accuracy": 7,
+      "Strength": 1
+    },
+    "Origin": "Starting Gear",
+    "Terms": ["Archive"],
+    "Affinities": []
   },
-  "RAWHIDE BOOTS": {
-    "keywords": ["armor", "set", "rawhide"],
-    "armor": 1,
-    "location": "Waist",
-    "origin": "Skinnery",
-    "terms": ["Depart"],
-    "affinities": []
+  "RAWHIDE-BOOTS": {
+    "Keywords": ["armor", "set", "rawhide"],
+    "Stats": {
+      "Armor": 1,
+      "Location": "Legs"
+    },
+    "Location": "Waist",
+    "Origin": "Skinnery",
+    "Terms": ["Depart"],
+    "Affinities": []
   },
-  "RAWHIDE DRUM": {
-    "keywords": ["item", "rawhide", "instrument", "noisy"],
-    "origin": "Skinnery",
-    "terms": ["Arrival", "Encourage"],
-    "affinities": ["LG"]
+  "RAWHIDE-DRUM": {
+    "Keywords": ["item", "rawhide", "instrument", "noisy"],
+    "Origin": "Skinnery",
+    "Stats": {},
+    "Terms": ["Arrival", "Encourage"],
+    "Affinities": ["LG"]
+  },
+  "RAWHIDE-GLOVES": {
+    "Keywords": ["armor", "set", "rawhide"],
+    "Stats": {
+      "Armor": 1,
+      "Location": "Arms"
+    },
+    "Origin": "Skinnery",
+    "Terms": ["Depart"],
+    "Affinities": ["LR"]
+  },
+  "RAWHIDE-HEADBAND": {
+    "Keywords": ["armor", "set", "rawhide"],
+    "Stats": {
+      "Armor": 1,
+      "Location": "Head"
+    },
+    "Origin": "Skinnery",
+    "Terms": [],
+    "Affinities": ["DB"]
+  },
+  "RAWHIDE-WHIP": {
+    "Keywords": ["weapon", "melee", "whip", "rawhide"],
+    "Stats": {
+      "Speed": 3,
+      "Accuracy": 7,
+      "Strength": 1
+    },
+    "Origin": "Skinnery",
+    "Terms": ["Provoke", "Priority Target"],
+    "Affinities": []
+  },
+  "RAWHIDE-VEST": {
+    "Keywords": ["armor", "set", "rawhide"],
+    "Stats": {
+      "Armor": 1,
+      "Location": "Chest"
+    },
+    "Origin": "Skinnery",
+    "Terms": [],
+    "Affinities": ["UB", "RR"]
+  },
+  "RAWHIDE-PANTS": {
+    "Keywords": ["armor", "set", "rawhide"],
+    "Stats": {
+      "Armor": 1,
+      "Location": "Waist"
+    },
+    "Origin": "Skinnery",
+    "Terms": [],
+    "Affinities": []
   }
 }

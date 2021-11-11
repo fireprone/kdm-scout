@@ -7,7 +7,7 @@
   display: grid;
   grid-template: 1fr 2fr minmax(50px, 100px) / auto;
   grid-template-areas:
-    'Context'
+    'Locations'
     'Body'
     'Nav';
   height: 100%;
@@ -17,17 +17,17 @@
   #section-grid {
     grid-template: repeat(4, 1fr) / repeat(5, 1fr);
     grid-template-areas:
-      'Nav Context Context Context Context'
+      'Nav Locations Locations Locations Locations'
       'Nav Body Body Body Body'
       'Nav Body Body Body Body'
       'Nav Body Body Body Body';
   }
 }
 
-#context-section {
+#locations-section {
   z-index: 3;
   position: relative;
-  grid-area: Context;
+  grid-area: Locations;
   background-color: #331818;
 }
 

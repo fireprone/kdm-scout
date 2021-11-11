@@ -4,3 +4,7 @@
   background-size: contain;
   background-repeat: no-repeat;
 }
+
+.card.shadow {
+  opacity: 30%;
+}

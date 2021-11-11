@@ -1,15 +1,13 @@
-import './ContextMenu.css';
+import './LocationsMenu.css';
 import { useEffect, useState } from 'react';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMoreSharp';
-import ExpandLessIcon from '@material-ui/icons/ExpandLess';
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import LoadoutCard from '../LoadoutCard/LoadoutCard';
 import Skinnery from '../../img/skinnery-save.png';
 import BoneSmith from '../../img/bone-smith-save.png';
 import OrganGrinder from '../../img/organ-grinder-save.png';
-import { motion } from 'framer-motion';
+import { motion, AnimateSharedLayout } from 'framer-motion';
 
-const ContextMenu = ({ clickListener }) => {
-  const [isExpanded, setIsExpanded] = useState(true); //TODO: set to true only for testing
+const LocationsMenu = ({ tapStart, dragEnd, clickListener }) => {
   const [selectedLocation, setSelectedLocation] = useState('');
   const [wares, setWares] = useState([]);
 
@@ -22,38 +20,44 @@ const ContextMenu = ({ clickListener }) => {
         /\.(png|jpe?g|svg)$/
       );
       skinneryItems.keys().forEach((card) => {
-        const cardName = card
-          .replace('./', '')
-          .replace('-', ' ')
-          .replace('.png', '');
+        const cardName = card.replace('./', '').replace('.png', '');
         cards.push(cardName);
       });
-
       setWares(cards);
     }
   }, [selectedLocation]);
 
   return (
-    // <div
-    //   className='ContextMenu'
-    //   style={{
-    //     transform: isExpanded ? 'translateY(0)' : 'translateY(-100%)',
-    //   }}
-    // >
-    <>
-      <motion.div className='context-content'>
-        {wares.length ? (
-          wares.map((ware, i) => (
-            <LoadoutCard
-              key={`ware-${i}`}
-              whileTap={{ scale: 1.2 }}
-              name={ware}
-              clickListener={clickListener}
-            />
-          ))
+    <AnimateSharedLayout>
+      <motion.div className='locations-content'>
+        {selectedLocation ? (
+          <>
+            <div id='location-exit' onClick={() => setSelectedLocation('')}>
+              <ArrowBackIcon />
+            </div>
+            <div id='location-cards'>
+              {wares.map((ware, i) => (
+                <motion.div
+                  drag
+                  layout
+                  whileDrag={{ position: 'absolute', zIndex: 3 }}
+                  onTapStart={tapStart}
+                  onDragEnd={dragEnd}
+                >
+                  <LoadoutCard
+                    key={`ware-${i}`}
+                    whileTap={{ scale: 1.2 }}
+                    name={ware}
+                    clickListener={clickListener}
+                  />
+                </motion.div>
+              ))}
+            </div>
+          </>
         ) : (
           <>
             <motion.div
+              className='location'
               style={{
                 backgroundImage: `linear-gradient(to left bottom, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 1)), url(${Skinnery})`,
               }}
@@ -62,6 +66,7 @@ const ContextMenu = ({ clickListener }) => {
               Skinnery
             </motion.div>
             <div
+              className='location'
               style={{
                 backgroundImage: `linear-gradient(to left bottom, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 1)), url(${BoneSmith})`,
               }}
@@ -69,6 +74,7 @@ const ContextMenu = ({ clickListener }) => {
               Bone Smith
             </div>
             <div
+              className='location'
               style={{
                 backgroundImage: `linear-gradient(to left bottom, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 1)), url(${OrganGrinder})`,
               }}
@@ -78,12 +84,8 @@ const ContextMenu = ({ clickListener }) => {
           </>
         )}
       </motion.div>
-      {/* <div className='context-tab'>
-        <ExpandMoreIcon />
-      </div> */}
-      {/* </div> */}
-    </>
+    </AnimateSharedLayout>
   );
 };
 
-export default ContextMenu;
+export default LocationsMenu;
