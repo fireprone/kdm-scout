@@ -9,7 +9,9 @@ const Cell = forwardRef(
   (
     {
       index,
-      onDragEnd,
+      dragStart,
+      dragActive,
+      dragEnd,
       activeIndex,
       onTapStart,
       clickListener,
@@ -29,7 +31,10 @@ const Cell = forwardRef(
           <motion.div
             className='cardDrag'
             drag
-            onDragEnd={onDragEnd}
+            onDragStart={dragStart}
+            onDrag={dragActive}
+            onDragEnd={dragEnd}
+            dragElastic={0}
             dragConstraints={dragConstraints}
             layout
           >

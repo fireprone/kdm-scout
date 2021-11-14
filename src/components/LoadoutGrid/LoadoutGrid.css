@@ -3,9 +3,10 @@
   display: grid;
   gap: 1vmin;
   grid-template: repeat(3, minmax(50px, 1fr)) / repeat(3, minmax(50px, 1fr));
-  top: 50%;
-  transform: translate(0, -50%);
+  /* top: 50%; */
+  /* transform: translate(0, -50%); */
   margin: 0 auto;
+  padding: 1rem 0;
   width: 95vw;
   max-width: 30rem;
 }

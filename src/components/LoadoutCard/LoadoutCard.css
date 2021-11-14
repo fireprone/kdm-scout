@@ -8,3 +8,7 @@
 .card.shadow {
   opacity: 30%;
 }
+
+.card.removable {
+  opacity: 50%;
+}

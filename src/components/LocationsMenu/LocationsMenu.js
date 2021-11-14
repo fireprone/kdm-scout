@@ -7,19 +7,41 @@ import BoneSmith from '../../img/bone-smith-save.png';
 import OrganGrinder from '../../img/organ-grinder-save.png';
 import { motion, AnimateSharedLayout } from 'framer-motion';
 
-const LocationsMenu = ({ tapStart, dragEnd, clickListener }) => {
+const LocationsMenu = ({ tapStart, dragStart, dragEnd, clickListener }) => {
   const [selectedLocation, setSelectedLocation] = useState('');
   const [wares, setWares] = useState([]);
+
+  const startingGearWares = require.context(
+    '../../img/StartingGear',
+    false,
+    /\.(png|jpe?g|svg)$/
+  );
+  const skinneryWares = require.context(
+    '../../img/Skinnery',
+    false,
+    /\.(png|jpe?g|svg)$/
+  );
+  const boneSmithWares = require.context(
+    '../../img/Skinnery',
+    false,
+    /\.(png|jpe?g|svg)$/
+  );
+  const organGrinderWares = require.context(
+    '../../img/Skinnery',
+    false,
+    /\.(png|jpe?g|svg)$/
+  );
+  const locationWares = {
+    'Starting Gear': startingGearWares,
+    Skinnery: skinneryWares,
+    'Bone Smith': boneSmithWares,
+    'Organ Grinder': organGrinderWares,
+  };
 
   useEffect(() => {
     if (selectedLocation) {
       let cards = [];
-      const skinneryItems = require.context(
-        `../../img/Skinnery`,
-        false,
-        /\.(png|jpe?g|svg)$/
-      );
-      skinneryItems.keys().forEach((card) => {
+      locationWares[selectedLocation].keys().forEach((card) => {
         const cardName = card.replace('./', '').replace('.png', '');
         cards.push(cardName);
       });
@@ -42,6 +64,7 @@ const LocationsMenu = ({ tapStart, dragEnd, clickListener }) => {
                   layout
                   whileDrag={{ position: 'absolute', zIndex: 3 }}
                   onTapStart={tapStart}
+                  onDragStart={dragStart}
                   onDragEnd={dragEnd}
                 >
                   <LoadoutCard
@@ -56,31 +79,18 @@ const LocationsMenu = ({ tapStart, dragEnd, clickListener }) => {
           </>
         ) : (
           <>
-            <motion.div
-              className='location'
-              style={{
-                backgroundImage: `linear-gradient(to left bottom, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 1)), url(${Skinnery})`,
-              }}
-              onTap={() => setSelectedLocation('Skinnery')}
-            >
-              Skinnery
-            </motion.div>
-            <div
-              className='location'
-              style={{
-                backgroundImage: `linear-gradient(to left bottom, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 1)), url(${BoneSmith})`,
-              }}
-            >
-              Bone Smith
-            </div>
-            <div
-              className='location'
-              style={{
-                backgroundImage: `linear-gradient(to left bottom, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 1)), url(${OrganGrinder})`,
-              }}
-            >
-              Organ Grinder
-            </div>
+            {Object.keys(locationWares).map((location, i) => (
+              <motion.div
+                className='location'
+                key={`location-${i}`}
+                style={{
+                  backgroundImage: `linear-gradient(to left bottom, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 1))`,
+                }}
+                onTap={() => setSelectedLocation(location)}
+              >
+                {location}
+              </motion.div>
+            ))}
           </>
         )}
       </motion.div>
