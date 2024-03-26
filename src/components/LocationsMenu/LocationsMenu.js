@@ -60,6 +60,7 @@ const LocationsMenu = ({ tapStart, dragStart, dragEnd, clickListener }) => {
             <div id='location-cards'>
               {wares.map((ware, i) => (
                 <motion.div
+                  key={`ware-${i}`}
                   drag
                   layout
                   whileDrag={{ position: 'absolute', zIndex: 3 }}

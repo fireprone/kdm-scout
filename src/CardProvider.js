@@ -5,14 +5,23 @@ const CardProvider = (() => {
     let cardObj = {};
     cardName = cardName.toUpperCase();
 
-    if (cardName && cardInfo.hasOwnProperty(cardName)) {
-      cardObj = cardInfo[cardName];
+    if (cardName) {
       const cardImageName = `${cardName.replace(/ /g, '-').toLowerCase()}.png`;
-      const cardImageOrigin = `${cardObj.Origin.replace(/ /g, '')}`;
+      let cardImagePath = '';
+
+      if (!cardInfo.hasOwnProperty(cardName)) {
+        cardImagePath = `./img/${cardImageName}`;
+      } else {
+        cardObj = cardInfo[cardName];
+        const cardImageName = `${cardName
+          .replace(/ /g, '-')
+          .toLowerCase()}.png`;
+        const cardImageOrigin = `${cardObj.Origin.replace(/ /g, '')}`;
+        cardImagePath = `./img/${cardImageOrigin}/${cardImageName}`;
+      }
+
       try {
-        const cardImageFile = await import(
-          `./img/${cardImageOrigin}/${cardImageName}`
-        );
+        const cardImageFile = await import(`${cardImagePath}`);
         cardObj.image = cardImageFile.default;
       } catch {
         console.error(`Failed to import card with name of '${cardName}'`);
