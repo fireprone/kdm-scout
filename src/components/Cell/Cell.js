@@ -1,3 +1,5 @@
+//TODO: On motion end, remove 'translate-3d' attr
+
 import './Cell.css';
 import { forwardRef } from 'react';
 import LoadoutCard from '../LoadoutCard/LoadoutCard';
@@ -7,7 +9,9 @@ const Cell = forwardRef(
   (
     {
       index,
-      onDragEnd,
+      dragStart,
+      dragActive,
+      dragEnd,
       activeIndex,
       onTapStart,
       clickListener,
@@ -27,7 +31,10 @@ const Cell = forwardRef(
           <motion.div
             className='cardDrag'
             drag
-            onDragEnd={onDragEnd}
+            onDragStart={dragStart}
+            onDrag={dragActive}
+            onDragEnd={dragEnd}
+            dragElastic={0}
             dragConstraints={dragConstraints}
             layout
           >
@@ -36,7 +43,6 @@ const Cell = forwardRef(
               onTapStart={onTapStart}
               name={cardName}
               clickListener={clickListener}
-              classes='newCard'
             />
           </motion.div>
         ) : (

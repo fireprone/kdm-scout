@@ -12,13 +12,3 @@ ReactDOM.render(
 );
 
 serviceWorkerRegistration.register();
-
-// const contextSectionElem = document.getElementById('context-section');
-// const contextMenuElem = contextSectionElem.querySelector('.ContextMenu');
-// window.addEventListener('resize', () => {
-//   if (contextSectionElem.clientHeight > 175) {
-//     contextMenuElem.style.transform = 'translateY(0)';
-//   } else {
-//     contextMenuElem.style.transform = 'translateY(-60%)';
-//   }
-// });

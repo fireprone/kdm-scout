@@ -25,31 +25,33 @@ const TermsList = ({ terms, isShown }) => {
         {activeTerm && (
           <motion.div
             id='term-definition'
-            className={activeTerm ? '' : 'hidden'}
-            initial={{ paddingTop: 0 }}
-            animate={{ paddingTop: ['0%', '100%', '95%'] }}
-            exit={{ paddingTop: 0 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
             transition={{
-              paddingTop: { type: 'tween', duration: 0.5 },
+              marginTop: { type: 'spring', duration: 0.1 },
             }}
           >
             <h2>{activeTerm}</h2>
             <hr />
             <p>{glossaryTerms[activeTerm]}</p>
-            <div id='return' onClick={() => setActiveTerm('')}>
+            <motion.div id='return' onTap={() => setActiveTerm('')}>
               <MdKeyboardArrowUp />
-            </div>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
       <ul>
         {terms.map((term) => (
-          <li key={term.replace(/ /g, '-')} onClick={() => setActiveTerm(term)}>
+          <motion.li
+            key={term.replace(/ /g, '-')}
+            onTap={() => setActiveTerm(term)}
+          >
             <div className='term'>
               {term}
               <LibraryBooksIcon />
             </div>
-          </li>
+          </motion.li>
         ))}
       </ul>
     </motion.div>

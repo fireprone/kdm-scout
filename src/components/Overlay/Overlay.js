@@ -14,41 +14,41 @@ const Overlay = ({ focusedCard, setFocusedCard }) => {
       animate={{ opacity: 1, marginTop: '10vmin' }}
       exit={{ opacity: 0, marginTop: 0 }}
       transition={{
-        opacity: { type: 'tween', duration: 0.1 },
-        marginTop: { type: 'spring', duration: 0.75 },
+        opacity: { type: 'tween', duration: 0.3 },
+        marginTop: { type: 'tween', duration: 0.3 },
       }}
     >
       <div id='card-preview'>
         <motion.div
           id='flip-card'
           className={isFlipped ? 'is-flipped' : ''}
-          onClick={() => setIsFlipped(!isFlipped)}
+          onTap={() => setIsFlipped(!isFlipped)}
           initial={{ marginTop: 0 }}
           animate={{ marginTop: '2rem' }}
         >
           <LoadoutCard
             whileTap={{ scale: 1.1 }}
             name={focusedCard.name}
-            classes='card card-front'
+            classes='card-front'
           />
           <LoadoutCard
             whileTap={{ scale: 1.1 }}
-            name={focusedCard.origin}
-            classes='card card-back'
+            name={focusedCard.Origin}
+            classes='card-back'
           />
         </motion.div>
-        {focusedCard.terms && focusedCard.terms.length ? (
-          <TermsList terms={focusedCard.terms} />
+        {focusedCard.Terms && focusedCard.Terms.length ? (
+          <TermsList terms={focusedCard.Terms} />
         ) : (
           ''
         )}
       </div>
-      <div
+      <motion.div
         id='overlay-bg'
-        onClick={() => {
+        onTap={() => {
           setFocusedCard({ name: '', origin: '' });
         }}
-      ></div>
+      ></motion.div>
     </motion.div>
   );
 };

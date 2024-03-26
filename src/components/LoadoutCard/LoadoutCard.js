@@ -4,6 +4,7 @@ import CardProvider from '../../CardProvider';
 import { motion } from 'framer-motion';
 
 const LoadoutCard = ({
+  whileHover,
   whileTap,
   onTapStart,
   name,
@@ -30,8 +31,9 @@ const LoadoutCard = ({
   return (
     <motion.div
       whileTap={whileTap}
+      whileHover={whileHover}
       onTapStart={onTapStart}
-      className={classes}
+      className={name + ' card' + (classes ? ` ${classes}` : '')}
       style={style}
       onTap={() =>
         clickListener ? clickListener({ name: name, ...cardInfo }) : true

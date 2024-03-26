@@ -3,17 +3,19 @@ import cardInfo from './cardInfo.json';
 const CardProvider = (() => {
   const getCard = async (cardName) => {
     let cardObj = {};
-    if (cardInfo.hasOwnProperty(cardName)) {
-      cardObj = cardInfo[cardName];
-    }
+    cardName = cardName.toUpperCase();
 
-    if (cardName) {
+    if (cardName && cardInfo.hasOwnProperty(cardName)) {
+      cardObj = cardInfo[cardName];
       const cardImageName = `${cardName.replace(/ /g, '-').toLowerCase()}.png`;
+      const cardImageOrigin = `${cardObj.Origin.replace(/ /g, '')}`;
       try {
-        const cardImageFile = await import(`./img/${cardImageName}`);
+        const cardImageFile = await import(
+          `./img/${cardImageOrigin}/${cardImageName}`
+        );
         cardObj.image = cardImageFile.default;
       } catch {
-        console.error(`No such card with name '${cardName}'`);
+        console.error(`Failed to import card with name of '${cardName}'`);
         cardObj.image = '';
       }
     } else {

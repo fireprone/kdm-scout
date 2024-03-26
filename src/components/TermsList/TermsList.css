@@ -4,24 +4,20 @@
   top: 0;
   left: 0;
   right: 0;
-  margin: 0 auto;
   border-radius: 30px 30px 30px 30px;
   z-index: 1;
 }
 
 .TermsList ul {
   list-style-type: none;
-  z-index: 2;
-  padding-top: 1rem;
   padding-bottom: 1rem;
-  transition: padding-top 1.5s;
 }
 
 .TermsList #term-definition {
   position: absolute;
   background-color: #444;
   z-index: 3;
-  transition: margin-top 0.75s ease-out;
+  overflow: hidden;
 }
 
 .TermsList ul,
@@ -51,7 +47,6 @@
 }
 
 .TermsList hr {
-  width: 100%;
   border: 0;
   height: 1px;
   margin-top: 0.5rem;
@@ -64,8 +59,6 @@
 }
 
 .TermsList li {
-  display: inline-block;
-  width: 100%;
   transition: background-color 1s;
 }
 
@@ -99,11 +92,6 @@
     width: 45%;
     left: unset;
     padding-top: 0;
-    margin-top: 10vmin;
-  }
-
-  .TermsList div#term-definition {
-    border-radius: 30px 30px 30px 30px;
   }
 
   .TermsList #term-definition p {
