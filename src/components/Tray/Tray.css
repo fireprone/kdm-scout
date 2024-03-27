@@ -1,0 +1,9 @@
+.Tray {
+  z-index: 3;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 90%;
+  background-color: #555;
+}

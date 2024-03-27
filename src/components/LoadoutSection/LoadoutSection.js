@@ -1,11 +1,12 @@
 import './LoadoutSection.css';
 import LocationsMenu from '../LocationsMenu/LocationsMenu';
 import LoadoutGrid from '../LoadoutGrid/LoadoutGrid';
+import Tray from '../Tray/Tray';
 import { AnimatePresence } from 'framer-motion';
 import Overlay from '../Overlay/Overlay';
 import { useState, useRef } from 'react';
 
-const LoadoutSection = () => {
+const LoadoutSection = (props) => {
   const [focusedCard, setFocusedCard] = useState({ name: '', origin: '' });
   const [isDragging, setIsDragging] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -103,14 +104,6 @@ const LoadoutSection = () => {
           <Overlay focusedCard={focusedCard} setFocusedCard={setFocusedCard} />
         )}
       </AnimatePresence>
-      <section id='locations-section' className={isDragging ? 'hidden' : ''}>
-        <LocationsMenu
-          tapStart={activateCard}
-          dragStart={dragStart}
-          dragEnd={dragEnd}
-          clickListener={setFocusedCard}
-        />
-      </section>
       <section id='grid-section'>
         <div id='card-removal' ref={removalRef}></div>
         <LoadoutGrid
@@ -125,6 +118,7 @@ const LoadoutSection = () => {
           dragConstraints={sectionRef}
         />
       </section>
+      {props.isShowingTray && <Tray />}
     </div>
   );
 };
