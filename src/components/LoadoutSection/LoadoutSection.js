@@ -6,6 +6,7 @@ import { AnimatePresence } from 'framer-motion';
 import Overlay from '../Overlay/Overlay';
 import { useState, useRef } from 'react';
 
+// TODO: Clone card on drag instead of removing from list
 const LoadoutSection = (props) => {
   const [focusedCard, setFocusedCard] = useState({ name: '', origin: '' });
   const [isDragging, setIsDragging] = useState(false);
@@ -118,7 +119,16 @@ const LoadoutSection = (props) => {
           dragConstraints={sectionRef}
         />
       </section>
-      {props.isShowingTray && <Tray />}
+      {props.isShowingCardsTray && (
+        <Tray>
+          <LocationsMenu
+            tapStart={activateCard}
+            dragStart={dragStart}
+            dragEnd={dragEnd}
+            clickListener={setFocusedCard}
+          />
+        </Tray>
+      )}
     </div>
   );
 };

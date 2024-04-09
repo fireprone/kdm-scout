@@ -1,16 +1,14 @@
 import './Nav.css';
 
-const Nav = ({ isShowingTray, setIsShowingTray }) => {
+const Nav = ({ toggleShowingCardsTray, toggleShowingDiceTray }) => {
   return (
     <nav className='Nav'>
       <ul>
         <li>
-          <button onClick={() => setIsShowingTray(!isShowingTray)}>
-            Cards
-          </button>
+          <button onClick={toggleShowingCardsTray}>Cards</button>
         </li>
         <li>
-          <button>Dice</button>
+          <button onClick={toggleShowingDiceTray}>Dice</button>
         </li>
         <li>
           <button>Stats</button>

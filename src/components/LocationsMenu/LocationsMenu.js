@@ -5,10 +5,10 @@ import LoadoutCard from '../LoadoutCard/LoadoutCard';
 import Skinnery from '../../img/skinnery-save.png';
 import BoneSmith from '../../img/bone-smith-save.png';
 import OrganGrinder from '../../img/organ-grinder-save.png';
-import { motion, AnimateSharedLayout } from 'framer-motion';
+import { motion, AnimateSharedLayout, useDragControls } from 'framer-motion';
 
 const LocationsMenu = ({ tapStart, dragStart, dragEnd, clickListener }) => {
-  const [selectedLocation, setSelectedLocation] = useState('');
+  const [selectedLocation, setSelectedLocation] = useState('Skinnery');
   const [wares, setWares] = useState([]);
 
   const startingGearWares = require.context(
@@ -38,6 +38,12 @@ const LocationsMenu = ({ tapStart, dragStart, dragEnd, clickListener }) => {
     'Organ Grinder': organGrinderWares,
   };
 
+  const controls = useDragControls();
+
+  const startDrag = (event) => {
+    controls.start(event, { snapToCursor: true });
+  };
+
   useEffect(() => {
     if (selectedLocation) {
       let cards = [];
@@ -51,6 +57,22 @@ const LocationsMenu = ({ tapStart, dragStart, dragEnd, clickListener }) => {
 
   return (
     <AnimateSharedLayout>
+      <motion.div
+        drag
+        whileDrag={{ zIndex: 5, scale: 1.3 }}
+        onTapStart={tapStart}
+        onDragStart={dragStart}
+        onDragEnd={dragEnd}
+        dragControls={controls}
+        style={{
+          backgroundColor: 'black',
+          position: 'absolute',
+          width: '10rem',
+          zIndex: 5,
+        }}
+      >
+        <LoadoutCard name={'founding-stone'} clickListener={clickListener} />
+      </motion.div>
       <motion.div className='locations-content'>
         {selectedLocation ? (
           <>
@@ -59,22 +81,14 @@ const LocationsMenu = ({ tapStart, dragStart, dragEnd, clickListener }) => {
             </div>
             <div id='location-cards'>
               {wares.map((ware, i) => (
-                <motion.div
-                  key={`ware-${i}`}
-                  drag
-                  layout
-                  whileDrag={{ position: 'absolute', zIndex: 3 }}
-                  onTapStart={tapStart}
-                  onDragStart={dragStart}
-                  onDragEnd={dragEnd}
-                >
+                // <DraggableCardClone ware={ware} count={i} />
+                <div onPointerDown={startDrag} style={{ touchAction: 'none' }}>
                   <LoadoutCard
                     key={`ware-${i}`}
-                    whileTap={{ scale: 1.2 }}
                     name={ware}
                     clickListener={clickListener}
                   />
-                </motion.div>
+                </div>
               ))}
             </div>
           </>
