@@ -10,6 +10,7 @@ import { motion, AnimateSharedLayout, useDragControls } from 'framer-motion';
 const LocationsMenu = ({ tapStart, dragStart, dragEnd, clickListener }) => {
   const [selectedLocation, setSelectedLocation] = useState('Skinnery');
   const [wares, setWares] = useState([]);
+  const [currentDraggingCard, setCurrentDraggingCard] = useState('');
 
   const startingGearWares = require.context(
     '../../img/StartingGear',
@@ -40,8 +41,9 @@ const LocationsMenu = ({ tapStart, dragStart, dragEnd, clickListener }) => {
 
   const controls = useDragControls();
 
-  const startDrag = (event) => {
+  const startDrag = (event, cardName) => {
     controls.start(event, { snapToCursor: true });
+    setCurrentDraggingCard(cardName);
   };
 
   useEffect(() => {
@@ -66,13 +68,12 @@ const LocationsMenu = ({ tapStart, dragStart, dragEnd, clickListener }) => {
         onDragEnd={dragEnd}
         dragControls={controls}
         style={{
-          backgroundColor: 'black',
           position: 'absolute',
           width: '10rem',
-          zIndex: 5,
+          zIndex: -5,
         }}
       >
-        <LoadoutCard name={'founding-stone'} clickListener={clickListener} />
+        <LoadoutCard name={currentDraggingCard} clickListener={clickListener} />
       </motion.div>
       <motion.div className='locations-content'>
         {selectedLocation ? (
@@ -83,7 +84,10 @@ const LocationsMenu = ({ tapStart, dragStart, dragEnd, clickListener }) => {
             <div id='location-cards'>
               {wares.map((ware, i) => (
                 // <DraggableCardClone ware={ware} count={i} />
-                <div onPointerDown={startDrag} style={{ touchAction: 'none' }}>
+                <div
+                  onPointerDown={(e) => startDrag(e, ware)}
+                  style={{ touchAction: 'none' }}
+                >
                   <LoadoutCard
                     key={`ware-${i}`}
                     name={ware}
