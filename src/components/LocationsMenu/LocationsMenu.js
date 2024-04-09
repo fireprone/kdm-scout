@@ -59,6 +59,7 @@ const LocationsMenu = ({ tapStart, dragStart, dragEnd, clickListener }) => {
     <AnimateSharedLayout>
       <motion.div
         drag
+        layout
         whileDrag={{ zIndex: 5, scale: 1.3 }}
         onTapStart={tapStart}
         onDragStart={dragStart}
