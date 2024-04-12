@@ -87,6 +87,7 @@ const LocationsMenu = ({ tapStart, dragStart, dragEnd, clickListener }) => {
                 <div
                   onPointerDown={(e) => startDrag(e, ware)}
                   style={{ touchAction: 'none' }}
+                  key={`ware-${i}`}
                 >
                   <LoadoutCard
                     key={`ware-${i}`}

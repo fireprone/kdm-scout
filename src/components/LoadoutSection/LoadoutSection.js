@@ -120,7 +120,7 @@ const LoadoutSection = (props) => {
         />
       </section>
       {props.isShowingCardsTray && (
-        <Tray>
+        <Tray isHiding={isDragging}>
           <LocationsMenu
             tapStart={activateCard}
             dragStart={dragStart}
