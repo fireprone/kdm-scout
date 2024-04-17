@@ -118,7 +118,7 @@ const LoadoutSection = (props) => {
       <motion.div
         drag
         layout
-        whileDrag={{ zIndex: 5, scale: 1.3 }}
+        whileDrag={{ zIndex: 5, scale: 1.3, opacity: 1 }}
         onDragStart={dragStart}
         onDragEnd={dragEnd}
         dragControls={controls}
@@ -126,6 +126,10 @@ const LoadoutSection = (props) => {
           position: 'absolute',
           width: '10rem',
           zIndex: -5,
+          opacity: 0,
+        }}
+        transition={{
+          opacity: { duration: 0 },
         }}
       >
         <LoadoutCard
