@@ -13,19 +13,12 @@ const LoadoutCard = ({
 }) => {
   const [cardInfo, setCardInfo] = useState({ image: '', origin: '' });
 
-  useEffect(
-    () =>
-      (async function loadCardData() {
-        const card = await CardProvider.getCard(name);
-        setCardInfo(card);
-      })(),
-    [name]
-  );
+  useEffect(() => {
+    CardProvider.getCard(name).then((card) => setCardInfo(card));
+  }, [name]);
 
   const style = {
-    backgroundImage: cardInfo.image
-      ? `url(${cardInfo.image})`
-      : 'linear-gradient(to bottom, rgba(255,255,255,1), rgba(200,200,200,1))',
+    backgroundImage: `url(${cardInfo.image})`,
   };
 
   return (

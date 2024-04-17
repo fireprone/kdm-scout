@@ -7,8 +7,14 @@ import BoneSmith from '../../img/bone-smith-save.png';
 import OrganGrinder from '../../img/organ-grinder-save.png';
 import { motion, AnimateSharedLayout } from 'framer-motion';
 
-const LocationsMenu = ({ tapStart, dragStart, dragEnd, clickListener }) => {
-  const [selectedLocation, setSelectedLocation] = useState('');
+const LocationsMenu = ({
+  tapStart,
+  dragStart,
+  dragEnd,
+  clickListener,
+  startGearCardDrag,
+}) => {
+  const [selectedLocation, setSelectedLocation] = useState('Skinnery');
   const [wares, setWares] = useState([]);
 
   const startingGearWares = require.context(
@@ -59,21 +65,17 @@ const LocationsMenu = ({ tapStart, dragStart, dragEnd, clickListener }) => {
             </div>
             <div id='location-cards'>
               {wares.map((ware, i) => (
-                <motion.div
-                  drag
-                  layout
-                  whileDrag={{ position: 'absolute', zIndex: 3 }}
-                  onTapStart={tapStart}
-                  onDragStart={dragStart}
-                  onDragEnd={dragEnd}
+                <div
+                  onPointerDown={(e) => startGearCardDrag(e, ware)}
+                  style={{ touchAction: 'none' }}
+                  key={`ware-container-${i}`}
                 >
                   <LoadoutCard
                     key={`ware-${i}`}
-                    whileTap={{ scale: 1.2 }}
                     name={ware}
                     clickListener={clickListener}
                   />
-                </motion.div>
+                </div>
               ))}
             </div>
           </>

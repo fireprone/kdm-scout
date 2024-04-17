@@ -1,14 +1,18 @@
 import './LoadoutSection.css';
 import LocationsMenu from '../LocationsMenu/LocationsMenu';
 import LoadoutGrid from '../LoadoutGrid/LoadoutGrid';
-import { AnimatePresence } from 'framer-motion';
+import LoadoutCard from '../LoadoutCard/LoadoutCard';
+import Tray from '../Tray/Tray';
+import { AnimatePresence, motion, useDragControls } from 'framer-motion';
 import Overlay from '../Overlay/Overlay';
 import { useState, useRef } from 'react';
 
-const LoadoutSection = () => {
+// TODO: Clone card on drag instead of removing from list
+const LoadoutSection = (props) => {
   const [focusedCard, setFocusedCard] = useState({ name: '', origin: '' });
   const [isDragging, setIsDragging] = useState(false);
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(null);
+  const [currentDraggingCard, setCurrentDraggingCard] = useState('');
   const [gridArray, setGridArray] = useState([
     null,
     null,
@@ -33,6 +37,13 @@ const LoadoutSection = () => {
   const cells = [cell0, cell1, cell2, cell3, cell4, cell5, cell6, cell7, cell8];
   const sectionRef = useRef(null);
   const removalRef = useRef(null);
+
+  const controls = useDragControls();
+
+  const startGearCardDrag = (event, cardName) => {
+    controls.start(event, { snapToCursor: true });
+    setCurrentDraggingCard(cardName);
+  };
 
   const checkCellIndex = ({ point }) => {
     const cellIndex = cells.findIndex((cell) => {
@@ -77,7 +88,7 @@ const LoadoutSection = () => {
     if (removableCard) {
       newGridArray[activeIndex] = null;
     } else if (cellIndex >= 0 && cellIndex !== activeIndex) {
-      if (isNaN(activeIndex)) {
+      if (activeIndex === null || isNaN(activeIndex)) {
         newGridArray[cellIndex] = draggedCard.classList[0];
       } else {
         const temp = newGridArray[cellIndex];
@@ -86,6 +97,7 @@ const LoadoutSection = () => {
       }
     }
     setGridArray(newGridArray);
+    setActiveIndex(null);
   };
 
   const activateCard = (event) => {
@@ -103,14 +115,28 @@ const LoadoutSection = () => {
           <Overlay focusedCard={focusedCard} setFocusedCard={setFocusedCard} />
         )}
       </AnimatePresence>
-      <section id='locations-section' className={isDragging ? 'hidden' : ''}>
-        <LocationsMenu
-          tapStart={activateCard}
-          dragStart={dragStart}
-          dragEnd={dragEnd}
+      <motion.div
+        drag
+        layout
+        whileDrag={{ zIndex: 5, scale: 1.3, opacity: 1 }}
+        onDragStart={dragStart}
+        onDragEnd={dragEnd}
+        dragControls={controls}
+        style={{
+          position: 'absolute',
+          width: '10rem',
+          zIndex: -5,
+          opacity: 0,
+        }}
+        transition={{
+          opacity: { duration: 0 },
+        }}
+      >
+        <LoadoutCard
+          name={currentDraggingCard}
           clickListener={setFocusedCard}
         />
-      </section>
+      </motion.div>
       <section id='grid-section'>
         <div id='card-removal' ref={removalRef}></div>
         <LoadoutGrid
@@ -125,6 +151,17 @@ const LoadoutSection = () => {
           dragConstraints={sectionRef}
         />
       </section>
+      {props.isShowingCardsTray && (
+        <Tray isHiding={isDragging}>
+          <LocationsMenu
+            tapStart={activateCard}
+            dragStart={dragStart}
+            dragEnd={dragEnd}
+            clickListener={setFocusedCard}
+            startGearCardDrag={startGearCardDrag}
+          />
+        </Tray>
+      )}
     </div>
   );
 };

@@ -1,12 +1,18 @@
 import './Nav.css';
 
-const Nav = () => {
+const Nav = ({ toggleShowingCardsTray, toggleShowingDiceTray }) => {
   return (
     <nav className='Nav'>
       <ul>
-        <li>Grid</li>
-        <li>Dice</li>
-        <li>Stats</li>
+        <li>
+          <button onClick={toggleShowingCardsTray}>Cards</button>
+        </li>
+        <li>
+          <button onClick={toggleShowingDiceTray}>Dice</button>
+        </li>
+        <li>
+          <button>Stats</button>
+        </li>
       </ul>
     </nav>
   );
