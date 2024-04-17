@@ -5,12 +5,17 @@ import LoadoutCard from '../LoadoutCard/LoadoutCard';
 import Skinnery from '../../img/skinnery-save.png';
 import BoneSmith from '../../img/bone-smith-save.png';
 import OrganGrinder from '../../img/organ-grinder-save.png';
-import { motion, AnimateSharedLayout, useDragControls } from 'framer-motion';
+import { motion, AnimateSharedLayout } from 'framer-motion';
 
-const LocationsMenu = ({ tapStart, dragStart, dragEnd, clickListener }) => {
+const LocationsMenu = ({
+  tapStart,
+  dragStart,
+  dragEnd,
+  clickListener,
+  startGearCardDrag,
+}) => {
   const [selectedLocation, setSelectedLocation] = useState('Skinnery');
   const [wares, setWares] = useState([]);
-  const [currentDraggingCard, setCurrentDraggingCard] = useState('');
 
   const startingGearWares = require.context(
     '../../img/StartingGear',
@@ -39,13 +44,6 @@ const LocationsMenu = ({ tapStart, dragStart, dragEnd, clickListener }) => {
     'Organ Grinder': organGrinderWares,
   };
 
-  const controls = useDragControls();
-
-  const startDrag = (event, cardName) => {
-    controls.start(event, { snapToCursor: true });
-    setCurrentDraggingCard(cardName);
-  };
-
   useEffect(() => {
     if (selectedLocation) {
       let cards = [];
@@ -59,22 +57,6 @@ const LocationsMenu = ({ tapStart, dragStart, dragEnd, clickListener }) => {
 
   return (
     <AnimateSharedLayout>
-      <motion.div
-        drag
-        layout
-        whileDrag={{ zIndex: 5, scale: 1.3 }}
-        onTapStart={tapStart}
-        onDragStart={dragStart}
-        onDragEnd={dragEnd}
-        dragControls={controls}
-        style={{
-          position: 'absolute',
-          width: '10rem',
-          zIndex: -5,
-        }}
-      >
-        <LoadoutCard name={currentDraggingCard} clickListener={clickListener} />
-      </motion.div>
       <motion.div className='locations-content'>
         {selectedLocation ? (
           <>
@@ -83,11 +65,10 @@ const LocationsMenu = ({ tapStart, dragStart, dragEnd, clickListener }) => {
             </div>
             <div id='location-cards'>
               {wares.map((ware, i) => (
-                // <DraggableCardClone ware={ware} count={i} />
                 <div
-                  onPointerDown={(e) => startDrag(e, ware)}
+                  onPointerDown={(e) => startGearCardDrag(e, ware)}
                   style={{ touchAction: 'none' }}
-                  key={`ware-${i}`}
+                  key={`ware-container-${i}`}
                 >
                   <LoadoutCard
                     key={`ware-${i}`}

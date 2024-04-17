@@ -1,6 +1,5 @@
-import { useEffect } from 'react';
 import './Tray.css';
-import { motion, useAnimation } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const Tray = (props) => {
   return (
